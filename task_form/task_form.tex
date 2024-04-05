@@ -1,9 +1,7 @@
 \documentclass[12pt, А4]{article} % задаём тип документа: статья - и его характеристики: 12-ый стандартный шрифт, размер листа А4
 
-
-
     % Внимание! Чтобы код ниже работал, необхоидмо переключиться на движок XeLaTe
-    \usepackage{fontspec} % подключаем модуль для работы с 
+    \usepackage{fontspec} % подключаем модуль для работы со шрифтами
     \PassOptionsToPackage{no-math}{fontspec} %  https://tex.stackexchange.com/a/26295/104425
     \usepackage{polyglossia} % Поддержка многоязычности
     \usepackage{ragged2e} % патек для нормального выравнивания текста
@@ -16,8 +14,6 @@
         paperwidth=8.5in% % ширина листа
     ]{geometry} 
 
-
-
     % настройка шрифтов и языков
     \defaultfontfeatures{Ligatures=TeX,Mapping=tex-text}
 
@@ -25,17 +21,15 @@
     \setotherlanguage{english} % устанавливаем английский как дополнительный язык
 
     \setmainfont{Times New Roman} % устанавливаем главный шрифт 
-    \setsansfont[Ligatures=TeX]{Nimbus Sans L} % устонавливаем дополнительный шрмфт 
+    \setsansfont[Ligatures=TeX]{Arial} % устонавливаем дополнительный шрмфт 
 
     \newfontfamily\cyrillicfont[Script=Cyrillic]{Times New Roman} % делаем так, чтобы русский язык мог отображаться главным шрифтом 
-    \newfontfamily\cyrillicfontsf[Script=Cyrillic]{Nimbus Sans L} % делаем так, чтобы русский язык мог отображаться дополнительным шрифтом 
+    \newfontfamily\cyrillicfontsf[Script=Cyrillic]{Arial} % делаем так, чтобы русский язык мог отображаться дополнительным шрифтом 
 
     \newfontfamily\englishfont{Times New Roman} % делаем так, чтобы английский язык мог отображаться главным шрифтом 
-    \newfontfamily\englishfontsf{Nimbus Sans L} % делаем так, чтобы английский язык мог отображаться дополнительным шрифтом 
+    \newfontfamily\englishfontsf{Arial} % делаем так, чтобы английский язык мог отображаться дополнительным шрифтом 
 
     \thispagestyle{empty} % убирает нумерацию
-
-
 
 \begin{document} % начала тела документа, его основной части
 
@@ -44,7 +38,6 @@
     \fontsize{11}{13.75} \textsf{Форма №17} 
     % \textsf {} делает шрифт текста внутри скобок дополнительным шрифтом
     \end{FlushRight} % конец выравнивания по правому краю
-
 
 \fontsize{14}{17.5} % дальнейший текст 14pt
 % \fontsize{x}{x*1.25} контролирует размер шрифта
@@ -59,9 +52,7 @@
 
     \end{Center}  % конец выравниваня по центру
 
-
 \fontsize{12}{15} % дальнейший текст 12pt
-
 
     \begin{FlushLeft} % начало выравнивания по левому краю
 
@@ -93,7 +84,6 @@
 
     \end{FlushLeft} % конец выравнивания по левому краю
 
-
     \begin{Center} % начало выравниваня по центру
 
         \fontsize{24}{30} \textsf{ЗАДАНИЕ}
@@ -102,10 +92,7 @@
 
     \end{Center}  % конец выравниваня по центру
 
-
 \fontsize{12}{15} % дальнейший текст 12pt
-
-
 
     \begin{FlushLeft} % начало выравнивания по левому краю
 
@@ -118,7 +105,6 @@
         \textsf{1. Тема проекта} & 
         \textsf{Разработка модуля прогнозирования данных временных рядов} \vspace{1pt} \hline  
     \end{tabular} % конец таблицы
-
 
     \begin{tabular}{p{3.2cm} p{13.65cm}} % создаём таблицу 
         &
@@ -149,7 +135,8 @@
         \vspace{1pt} \hline \\
         \vspace{1pt} \hline \\
         \vspace{1pt} \hline \\
-        \vspace{1pt} \hline 
+        \vspace{1pt} \hline \\
+        \vspace{1pt} \hline
     \end{tabular} % конец таблицы   
 
     \begin{tabular}{p{17.25cm}} % создаём таблицу 
@@ -164,7 +151,7 @@
 
     \begin{tabular}{p{17.25cm}} % создаём таблицу 
         \textsf{\textbf{4. Содержание расчетно-пояснительной записки (перечень подлежащих разра-}} \vspace{1pt} \hline \\
-        \textsf{\textbf{ботке вопросов)}} \vspace{1pt} \hline \\
+        \textsf{\textbf{ботке вопросов:)}} \vspace{1pt} \hline \\
     \end{tabular} % конец таблицы 
     
     \begin{tabular}{p{17.25cm}} % создаём таблицу 
@@ -175,9 +162,10 @@
         \textsf{2.АНАЛИЗ ПРЕДМЕТНОЙ ОБЛАСТИ И ПОСТАНОВКА ЗАДАЧИ} \vspace{1pt} \hline \\
         \hspace{0.5cm}\textsf{2.1 Основные понятия предметной области} \vspace{1pt} \hline \\
         \hspace{0.5cm}\textsf{2.2 Результаты обследования пастеризационной установки} \vspace{1pt} \hline \\
-        \hspace{0.5cm}\textsf{2.3 Обзор SCADA-системы как системы внедрения модуля} \vspace{1pt} \hline \\
-        \hspace{0.5cm}\textsf{2.4 Требования к модулю прогназирования} \vspace{1pt} \hline \\
-        \hspace{0.5cm}\textsf{2.5 Постановка задачи на создание проекта машинного обучения} \vspace{1pt} \hline \\
+        \hspace{0.5cm}\textsf{2.3 Введение в прогнозирование и анализ временных рядов} \vspace{1pt} \hline \\
+        \hspace{0.5cm}\textsf{2.4 Введение в нейро сети и машинное обучение} \vspace{1pt} \hline \\
+        \hspace{0.5cm}\textsf{2.5 Требования к модулю прогназирования} \vspace{1pt} \hline \\
+        \hspace{0.5cm}\textsf{2.6 Постановка задачи на создание проекта машинного обучения} \vspace{1pt} \hline \\
     \end{tabular} % конец таблицы  
 
     \begin{tabular}{p{17.25cm}} % создаём таблицу
@@ -237,9 +225,7 @@
         & & &
     \end{tabular} % конец таблицы
 
-
 \fontsize{12}{15}
-
 
     \begin{tabular}{p{7.5cm} p{0.5cm} p{6.0cm} p{2.0cm}} % создаём таблицу
         \textsf{Задание принял к исполнению (дата)} & &
@@ -254,9 +240,6 @@
         \\ % переход на ряд ниже
     \end{tabular} % конец таблицы
 
-
 \end{FlushLeft} % конец выравнивания по левому краю
-
-
 
 \end{document} % конец тела документа, его основной части
