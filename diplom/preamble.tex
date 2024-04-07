@@ -1,0 +1,37 @@
+\documentclass[a4paper, oneside, openany]{report}
+% a4paper - формат листа А4
+% oneside - односторонний вывод
+% openany - начинаем новую главу со следующей новой страницей
+% 14pt - стандартный размер шрифта 
+
+\usepackage{ragged2e} % патек для нормального выравнивания текста
+
+\usepackage{geometry} % пакет для работы с разметкой страницы
+\geometry{left=2.6cm} % левый отступ
+\geometry{right=1.1cm} % правый отступ
+\geometry{top=2.22cm} % верхний отступ
+\geometry{bottom=2.6cm} % нижний отступ
+
+\usepackage{titlesec} % пакет для работы с разделами 
+\newcommand{\sectionbreak}{\clearpage} % что каждый раздел начинался с новой страницы
+
+% настройка шрифтов и языков
+    \usepackage[english, russian]{babel} % для работы с английским и русским языками
+    \usepackage[T2A]{fontenc} % для норм паказа символов в pdf
+    \usepackage[utf8]{inputenc} % для норм взаимодействия символов для самого tex
+
+    \usepackage{fontspec} % для работы со шрифтами 
+    \usepackage{polyglossia} % Поддержка многоязычности
+    \defaultfontfeatures{Ligatures=TeX,Mapping=tex-text}
+
+    \setmainlanguage[babelshorthands = true]{russian} % устанавливаемя русский как основной язык
+    \setotherlanguage{english} % устанавливаем английский как дополнительный язык
+
+    \setmainfont{Times New Roman} % устанавливаем главный шрифт 
+    \setsansfont[Ligatures=TeX]{Arial} % устонавливаем дополнительный шрмфт 
+
+    \newfontfamily\cyrillicfont[Script=Cyrillic]{Times New Roman} % делаем так, чтобы русский язык мог отображаться главным шрифтом 
+    \newfontfamily\cyrillicfontsf[Script=Cyrillic]{Arial} % делаем так, чтобы русский язык мог отображаться дополнительным шрифтом 
+
+    \newfontfamily\englishfont{Times New Roman} % делаем так, чтобы английский язык мог отображаться главным шрифтом 
+    \newfontfamily\englishfontsf{Arial} % делаем так, чтобы английский язык мог отображаться дополнительным шрифтом 

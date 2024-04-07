@@ -5,6 +5,7 @@
 		}
 	],
 	"settings": {
+		"cSpell.enabled": false,
 		"latex-workshop.latex.tools": [{
 			"name": "latexmk",
 			"command": "latexmk",
@@ -14,7 +15,7 @@
 				"-outdir=out",
 				"-interaction=nonstopmode",
 				"-file-line-error",
-				"%DOC%"
+				"main.tex"
 			]
 		}]
 	}
