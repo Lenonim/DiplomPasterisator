@@ -15,6 +15,28 @@
 \usepackage{titlesec} % пакет для работы с разделами 
 \newcommand{\sectionbreak}{\clearpage} % что каждый раздел начинался с новой страницы
 
+\usepackage{graphicx, epsfig} % для работы с графикой и картинками
+\usepackage[inkscapeformat=png]{svg} % для работы с svg картинками
+
+\usepackage{parskip} % сам настроит интервалы нужным образом
+
+% для настройки содержания
+    \usepackage{titletoc}
+    \renewcommand*\contentsname{\centering СОДЕРЖАНИЕ}
+    \titlecontents{section}[0em]{\medskip
+                                    \bfseries
+                                    \fontsize{13pt}{16.25pt}\selectfont}%
+    {\thecontentslabel.\enspace}%numbered
+    {}%numberless
+    {\titlerule*[1.2pc]{.}\contentspage}
+    %
+    \titlecontents{subsection}[0em]{\medskip
+                                    \bfseries
+                                    \fontsize{13pt}{16.25pt}\selectfont}%
+    {\thecontentslabel\enspace}%numbered
+    {}%numberless
+    {\normalfont\titlerule*[1.2pc]{.}\contentspage}%
+
 % настройка шрифтов и языков
     \usepackage[english, russian]{babel} % для работы с английским и русским языками
     \usepackage[T2A]{fontenc} % для норм паказа символов в pdf

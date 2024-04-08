@@ -15,6 +15,7 @@
 				"-outdir=out",
 				"-interaction=nonstopmode",
 				"-file-line-error",
+				"--shell-escape",
 				"main.tex"
 			]
 		}]
