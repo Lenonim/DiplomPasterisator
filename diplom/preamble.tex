@@ -20,23 +20,6 @@
 
 \usepackage{parskip} % сам настроит интервалы нужным образом
 
-% для настройки содержания
-    \usepackage{titletoc}
-    \renewcommand*\contentsname{\centering СОДЕРЖАНИЕ}
-    \titlecontents{section}[0em]{\medskip
-                                    \bfseries
-                                    \fontsize{13pt}{16.25pt}\selectfont}%
-    {\thecontentslabel.\enspace}%numbered
-    {}%numberless
-    {\titlerule*[1.2pc]{.}\contentspage}
-    %
-    \titlecontents{subsection}[0em]{\medskip
-                                    \bfseries
-                                    \fontsize{13pt}{16.25pt}\selectfont}%
-    {\thecontentslabel\enspace}%numbered
-    {}%numberless
-    {\normalfont\titlerule*[1.2pc]{.}\contentspage}%
-
 % настройка шрифтов и языков
     \usepackage[english, russian]{babel} % для работы с английским и русским языками
     \usepackage[T2A]{fontenc} % для норм паказа символов в pdf
@@ -57,3 +40,7 @@
 
     \newfontfamily\englishfont{Times New Roman} % делаем так, чтобы английский язык мог отображаться главным шрифтом 
     \newfontfamily\englishfontsf{Arial} % делаем так, чтобы английский язык мог отображаться дополнительным шрифтом 
+
+% Определяем переменные 
+    \newcommand\redline{\hspace{1.5cm}} % красная строка
+    \newcommand\titlespace{\vspace{42pt}} % промежуток между заголовками 
