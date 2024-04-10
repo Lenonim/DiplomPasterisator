@@ -1,0 +1,174 @@
+\documentclass[a4paper]{article}
+
+\usepackage{ragged2e} % патек для нормального выравнивания текста
+
+\usepackage{titlesec} % пакет для работы с разделами 
+\newcommand{\sectionbreak}{\clearpage} % что каждый раздел начинался с новой страницы
+
+\usepackage{ragged2e} % патек для нормального выравнивания текста
+
+\usepackage{geometry} % пакет для работы с разметкой страницы
+\geometry{left=2.5cm} % левый отступ
+\geometry{right=1.0cm} % правый отступ
+\geometry{top=1.0cm} % верхний отступ
+\geometry{bottom=1.0cm} % нижний отступ
+
+% настройка шрифтов и языков
+    \usepackage[english, russian]{babel} % для работы с английским и русским языками
+    \usepackage[T2A]{fontenc} % для норм паказа символов в pdf
+    \usepackage[utf8]{inputenc} % для норм взаимодействия символов для самого tex
+
+    \usepackage{fontspec} % для работы со шрифтами 
+    \usepackage{polyglossia} % Поддержка многоязычности
+    \defaultfontfeatures{Ligatures=TeX,Mapping=tex-text}
+
+    \setmainlanguage[babelshorthands = true]{russian} % устанавливаемя русский как основной язык
+    \setotherlanguage{english} % устанавливаем английский как дополнительный язык
+
+    \setmainfont{Times New Roman} % устанавливаем главный шрифт 
+    \setsansfont[Ligatures=TeX]{Arial} % устонавливаем дополнительный шрмфт 
+
+    \newfontfamily\cyrillicfont[Script=Cyrillic]{Times New Roman} % делаем так, чтобы русский язык мог отображаться главным шрифтом 
+    \newfontfamily\cyrillicfontsf[Script=Cyrillic]{Arial} % делаем так, чтобы русский язык мог отображаться дополнительным шрифтом 
+
+    \newfontfamily\englishfont{Times New Roman} % делаем так, чтобы английский язык мог отображаться главным шрифтом 
+    \newfontfamily\englishfontsf{Arial} % делаем так, чтобы английский язык мог отображаться дополнительным шрифтом 
+
+\pagenumbering{gobble}
+
+\begin{document}
+
+\begin{Center}{
+\cyrillicfontsf 
+\englishfontsf
+\fontsize{16pt}{0pt}\selectfont 
+  Министерство образования Республики Беларусь \vspace{20pt}
+
+  Учреждение образования \vspace{8pt}
+
+  <<Брестский государственный технический университет>> \vspace{20pt}
+
+  Кафедра <<ИИТ>> \vspace{21pt}
+}\end{Center}
+
+\begin{FlushLeft} {
+\cyrillicfontsf 
+\englishfontsf
+\fontsize{12pt}{18pt}\selectfont 
+
+  \begin{tabular}{p{8.35cm} p{5cm}}
+    & <<К защите допускаю>> Заведующий кафдрой 
+  \end{tabular}
+  
+  \vspace{14pt}
+  
+  \begin{tabular}{p{8.35cm} p{8cm}}
+    & \line(1, 0){3.5cm} \hspace{0.1cm} В.А. Головко \\
+    & "\line(1, 0){1.0cm}" \line(1, 0){2.25cm} \hspace{0.1cm} 2024 г. \\
+  \end{tabular}
+  
+}\end{FlushLeft}
+
+\vspace{24pt}
+
+\begin{Center}{
+\cyrillicfontsf 
+\englishfontsf
+\bfseries
+\fontsize{16pt}{24pt}\selectfont 
+  \par РАЗРАБОТКА МОДУЛЯ ПРОГНОЗИРОВАНИЯ ДАННЫХ 
+
+  \par ВРЕМЕННЫХ РЯДОВ ТЕХНОЛОГИЧЕСКОГО ПРОЦЕССА 
+
+  \par ПАСТЕРИЗАЦИОННОЙ УСТАНОВКИ 
+
+  \par
+}\end{Center}
+
+\vspace{24pt}
+
+\begin{Center}{
+\cyrillicfontsf 
+\englishfontsf
+\fontsize{12pt}{0pt}\selectfont 
+    ПОЯСНИТЕЛЬНАЯ ЗАПИСКА К ДИПЛОМНОМУ ПРОЕКТУ
+}\end{Center}
+
+\vspace{32pt}
+
+\begin{Center}{
+\cyrillicfontsf 
+\englishfontsf
+\bfseries
+\fontsize{16pt}{0pt}\selectfont 
+    БрГТУ200043-05 81 00
+}\end{Center}
+
+\vspace{22pt}
+
+\begin{Center}{
+\cyrillicfontsf 
+\englishfontsf
+\fontsize{16pt}{0pt}\selectfont 
+    Листов 100000
+}\end{Center}
+
+\vspace{22pt}
+
+\begin{FlushLeft} {
+\cyrillicfontsf 
+\englishfontsf
+\fontsize{14pt}{0pt}\selectfont 
+
+  \begin{tabular}{p{6.5cm} p{4.767cm} p{5.633cm}}
+    \raggedleft Заведующий кафедрой & & В.А. Головко  
+  \end{tabular}
+
+  \vspace{14pt}
+  
+  \begin{tabular}{p{6.5cm} p{4.767cm} p{5.633cm}}
+    \raggedleft Руководитель & & Д.С. Иванюк \\ 
+  \end{tabular}
+
+  \vspace{14pt}
+
+  \begin{tabular}{p{6.5cm} p{4.767cm} p{5.633cm}}
+    \raggedleft Консультант & & некто \\
+    \raggedleft по основным вопроса & &
+  \end{tabular}
+
+  \vspace{14pt}
+
+  \begin{tabular}{p{6.5cm} p{4.767cm} p{5.633cm}}
+    \raggedleft Консультант & & некто \\
+    \raggedleft по экономическому разделу & &
+  \end{tabular}
+
+  \vspace{14pt}
+
+  \begin{tabular}{p{6.5cm} p{4.767cm} p{5.633cm}}
+    \raggedleft Выполнил & & И.В. Абоимов \\
+  \end{tabular}
+
+  \vspace{14pt}
+
+  \begin{tabular}{p{6.5cm} p{4.767cm} p{5.633cm}}
+    \raggedleft Нормоконтроль & & некто \\
+  \end{tabular}
+
+  \vspace{14pt}
+
+  \begin{tabular}{p{6.5cm} p{4.767cm} p{5.633cm}}
+    \raggedleft Рецензент & & некто \\
+  \end{tabular}
+  
+}\end{FlushLeft}
+
+\begin{Center}{
+\cyrillicfontsf 
+\englishfontsf
+\fontsize{14pt}{21pt}\selectfont 
+    2024 г.
+}\end{Center}
+
+\end{document}
