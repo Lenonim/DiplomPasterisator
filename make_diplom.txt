@@ -1,0 +1,14 @@
+@echo off
+if exist title\out\ (
+  rmdir /s /q title\out
+)
+xelatex -interaction=nonstopmode -synctex=1 -output-directory=title\out -file-line-error title\title.tex
+if exist task_form\out\ (
+  rmdir /s /q task_form\out
+)
+xelatex -interaction=nonstopmode -synctex=1 -output-directory=task_form\out -file-line-error task_form\task_form.tex
+if exist diplom\out\ (
+  rmdir /s /q diplom\out
+)
+xelatex -interaction=nonstopmode -synctex=1 -output-directory=diplom\out -file-line-error diplom\main.tex
+end
