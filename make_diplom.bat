@@ -1,4 +1,5 @@
 @echo off
+chcp 1251
 if exist title\out\ (
   rmdir /s /q title\out
 )
@@ -10,5 +11,12 @@ xelatex -interaction=nonstopmode -synctex=1 -output-directory=task_form\out -fil
 if exist diplom\out\ (
   rmdir /s /q diplom\out
 )
-xelatex -interaction=nonstopmode -synctex=1 -output-directory=diplom\out -file-line-error diplom\main.tex
+cd diplom
+xelatex -interaction=nonstopmode -synctex=1 -output-directory=out -file-line-error -shell-escape main.tex
+cd..
+if exist out\ (
+  rmdir /s /q out
+)
+xelatex -interaction=nonstopmode -synctex=1 -output-directory=out -file-line-error make_diplom.tex
+chcp 866
 end
