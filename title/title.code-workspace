@@ -15,7 +15,7 @@
 				"-outdir=out",
 				"-interaction=nonstopmode",
 				"-file-line-error",
-				"task_form"
+				"title"
 			]
 		}]
 	}

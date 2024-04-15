@@ -10,8 +10,10 @@
 \usepackage{geometry} % пакет для работы с разметкой страницы
 \geometry{left=2.5cm} % левый отступ
 \geometry{right=1.0cm} % правый отступ
-\geometry{top=1.0cm} % верхний отступ
-\geometry{bottom=1.0cm} % нижний отступ
+\geometry{top=0.5cm} % верхний отступ
+\geometry{bottom=0.5cm} % нижний отступ
+\geometry{textwidth=175mm}
+\geometry{textheight=277mm}
 
 % настройка шрифтов и языков
     \usepackage[english, russian]{babel} % для работы с английским и русским языками
@@ -36,7 +38,18 @@
 
 \pagenumbering{gobble}
 
+\usepackage{lipsum}
+\usepackage{tikz}
+\usetikzlibrary {calc}
+\newcommand{\ramka}[5][0.5mm]{
+    \begin{tikzpicture}[remember picture,overlay]
+        \draw[line width=#1,color=black] ($(current page.south west) + (#2,#5)$) rectangle ($(current page.north east) - (#3,#4)$);
+    \end{tikzpicture}
+}
+
 \begin{document}
+
+\ramka{20mm}{5mm}{5mm}{5mm}
 
 \begin{Center}{
 \cyrillicfontsf 
