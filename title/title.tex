@@ -36,20 +36,32 @@
     \newfontfamily\englishfont{Times New Roman} % делаем так, чтобы английский язык мог отображаться главным шрифтом 
     \newfontfamily\englishfontsf{Arial} % делаем так, чтобы английский язык мог отображаться дополнительным шрифтом 
 
+% Рисует рамку
+\usepackage{xltxtra}
+
+\unitlength=1mm
+\oddsidemargin=-0.7mm
+\topmargin=-2.45cm
+
+\def\VL{\line(0,1){15}}
+\def\HL{\line(1,0){185}}
+\def\Box#1#2{\makebox(#1,5){#2}}
+\def\simpleGrad{\noindent\hbox to 0pt{
+        \vbox to 0pt{
+            \noindent\begin{picture}(185,287)(5,0)
+                \linethickness{0.5mm}
+                \put(0,0){\framebox(185,287){}}
+            \end{picture}
+}}}
+
+\makeatletter
+\def\@oddhead{\simpleGrad}
+\def\@oddfoot{}
+\makeatother
+
 \pagenumbering{gobble}
 
-\usepackage{lipsum}
-\usepackage{tikz}
-\usetikzlibrary {calc}
-\newcommand{\ramka}[5][0.5mm]{
-    \begin{tikzpicture}[remember picture,overlay]
-        \draw[line width=#1,color=black] ($(current page.south west) + (#2,#5)$) rectangle ($(current page.north east) - (#3,#4)$);
-    \end{tikzpicture}
-}
-
 \begin{document}
-
-\ramka{20mm}{5mm}{5mm}{5mm}
 
 \begin{Center}{
 \cyrillicfontsf 
