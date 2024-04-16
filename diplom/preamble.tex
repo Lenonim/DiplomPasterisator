@@ -20,6 +20,14 @@
 
 \usepackage{parskip} % сам настроит интервалы нужным образом
 
+\setcounter{page}{4} % устанавливаем начальную страницу
+
+%\usepackage[neverdecrease]{paralist} % для настройки отступов в списках
+%\setdefaultleftmargin{2.0cm}{}{}{}{}{}
+
+\usepackage{enumitem}
+\setlist[enumerate]{align=left}
+
 % настройка шрифтов и языков
     \usepackage[english, russian]{babel} % для работы с английским и русским языками
     \usepackage[T2A]{fontenc} % для норм паказа символов в pdf
@@ -44,3 +52,40 @@
 % Определяем переменные 
     \newcommand\redline{\hspace{1.5cm}} % красная строка
     \newcommand\titlespace{\vspace{42pt}} % промежуток между заголовками 
+
+% Рисует рамку
+    \usepackage{xltxtra}
+
+    \textheight=260mm
+    \textwidth=175mm
+    \unitlength=1mm
+    
+    \oddsidemargin=-0.5mm
+    \topmargin=-2.45cm
+
+    \def\VL{\line(0,1){15}}
+    \def\HL{\line(1,0){185}}
+    \def\Box#1#2{\makebox(#1,5){#2}}
+    \def\simpleGrad{\noindent\hbox to 0pt{
+            \vbox to 0pt{
+                \noindent\begin{picture}(185,287)(5,0)
+                    \linethickness{0.5mm}
+                    \put(0,0){\framebox(185,287){}}
+                    \put(0,0){\Box{7}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Изм.}}
+                    \put(0, 15)\HL
+                    \multiput(0, 5)(0, 5){2}{\line(1,0){65}}
+                    \put(7, 0){\VL\Box{10}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Лист.}}
+                    \put(17, 0){\VL\Box{15}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont № докум.}}
+                    \put(40, 0){\VL\Box{10}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Подп.}}
+                    \put(55, 0){\VL\Box{10}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Дата}}
+                    \put(65, 0){\VL\makebox(110,15){\cyrillicfont \englishfont \fontsize{18pt}{0pt}\selectfont ДП.АС-59.200043-05 81 00}}
+                    \put(175, 0){\makebox(10,25){\cyrillicfont \itshape \fontsize{8pt}{0pt}\selectfont Лист}}
+                    \put(175, 0){\VL\makebox(10,10){\cyrillicfont \englishfont \fontsize{12pt}{0pt}\selectfont \thepage}}
+                    \put(175,10){\line(1,0){10}}
+                \end{picture}
+    }}}
+    
+    \makeatletter
+    \def\@oddhead{\simpleGrad}
+    \def\@oddfoot{}
+    \makeatother
