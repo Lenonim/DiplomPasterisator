@@ -15,5 +15,11 @@ if exist diplom\svg-inkscape\ (
 if exist out\ (
   rmdir /s /q out
 )
+if exist practice_report\out\ (
+  rmdir /s /q practice_report\out
+)
+if exist practice_report\svg-inkscape\ (
+  rmdir /s /q practice_report\svg-inkscape
+)
 chcp 866
 end

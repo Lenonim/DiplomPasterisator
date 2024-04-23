@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"cSpell.enabled": false,
+		"latex-workshop.latex.tools": [{
+			"name": "latexmk",
+			"command": "latexmk",
+			"args": [
+				"-xelatex",
+				"-synctex=1",
+				"-outdir=out",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"--shell-escape",
+				"practice_report.tex"
+			]
+		}]
+	}
+}

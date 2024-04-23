@@ -1,0 +1,100 @@
+\documentclass[a4paper, oneside, openany]{report}
+% a4paper - формат листа А4
+% oneside - односторонний вывод
+% openany - начинаем новую главу со следующей новой страницей
+% 14pt - стандартный размер шрифта 
+
+\usepackage{ragged2e} % патек для нормального выравнивания текста
+
+\usepackage{geometry} % пакет для работы с разметкой страницы
+\geometry{left=2.6cm} % левый отступ
+\geometry{right=1.1cm} % правый отступ
+\geometry{top=2.22cm} % верхний отступ
+\geometry{bottom=2.6cm} % нижний отступ
+
+\usepackage{titlesec} % пакет для работы с разделами 
+\newcommand{\sectionbreak}{\clearpage} % что каждый раздел начинался с новой страницы
+
+\usepackage{graphicx, epsfig} % для работы с графикой и картинками
+\usepackage[inkscapeformat=png]{svg} % для работы с svg картинками
+
+\usepackage{parskip} % сам настроит интервалы нужным образом
+
+\setcounter{page}{2} % устанавливаем начальную страницу
+
+\usepackage{caption}
+%\DeclareCaptionFormat{empty}{}
+%\captionsetup{format=empty}
+
+%\usepackage[neverdecrease]{paralist} % для настройки отступов в списках
+%\setdefaultleftmargin{2.0cm}{}{}{}{}{}
+
+\usepackage{enumitem}
+\setlist[enumerate]{align=left}
+
+% настройка шрифтов и языков
+    \usepackage[english, russian]{babel} % для работы с английским и русским языками
+    \usepackage[T2A]{fontenc} % для норм паказа символов в pdf
+    \usepackage[utf8]{inputenc} % для норм взаимодействия символов для самого tex
+
+    \usepackage{fontspec} % для работы со шрифтами 
+    \usepackage{polyglossia} % Поддержка многоязычности
+    \defaultfontfeatures{Ligatures=TeX,Mapping=tex-text}
+
+    \setmainlanguage[babelshorthands = true]{russian} % устанавливаемя русский как основной язык
+    \setotherlanguage{english} % устанавливаем английский как дополнительный язык
+
+    \setmainfont{Times New Roman} % устанавливаем главный шрифт 
+    \setsansfont[Ligatures=TeX]{Arial} % устонавливаем дополнительный шрмфт 
+
+    \newfontfamily\cyrillicfont[Script=Cyrillic]{Times New Roman} % делаем так, чтобы русский язык мог отображаться главным шрифтом 
+    \newfontfamily\cyrillicfontsf[Script=Cyrillic]{Arial} % делаем так, чтобы русский язык мог отображаться дополнительным шрифтом 
+
+    \newfontfamily\englishfont{Times New Roman} % делаем так, чтобы английский язык мог отображаться главным шрифтом 
+    \newfontfamily\englishfontsf{Arial} % делаем так, чтобы английский язык мог отображаться дополнительным шрифтом 
+
+% Определяем переменные 
+    \newcommand\redline{\hspace{1.5cm}} % красная строка
+    \newcommand\titlespace{\vspace{26pt}} % промежуток между заголовками 
+    \newcommand\subtitlespace{\vspace{39pt}} % промежуток между заголовком и текстом 
+    \newcommand\gostFont{\cyrillicfont \englishfont \fontsize{13pt}{15.6pt}\selectfont} % набор необходимых параметров для обычного текста
+    \newcommand\gostTitleFont{\cyrillicfont \englishfont \fontsize{14pt}{16.8pt}\selectfont \bfseries} % набор необходимых параметров для текста заголовков
+    \parskip=0pt % чтобы между абзацами было расстояние равное межстрочному интервалу
+
+
+% Рисует рамку
+    \usepackage{xltxtra}
+
+    \textheight=260mm
+    \textwidth=175mm
+    \unitlength=1mm
+    
+    \oddsidemargin=-0.5mm
+    \topmargin=-2.45cm
+
+    \def\VL{\line(0,1){15}}
+    \def\HL{\line(1,0){185}}
+    \def\Box#1#2{\makebox(#1,5){#2}}
+    \def\simpleGrad{\noindent\hbox to 0pt{
+            \vbox to 0pt{
+                \noindent\begin{picture}(185,287)(5,0)
+                    \linethickness{0.5mm}
+                    \put(0,0){\framebox(185,287){}}
+                    \put(0,0){\Box{7}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Изм.}}
+                    \put(0, 15)\HL
+                    \multiput(0, 5)(0, 5){2}{\line(1,0){65}}
+                    \put(7, 0){\VL\Box{10}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Лист.}}
+                    \put(17, 0){\VL\Box{15}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont № докум.}}
+                    \put(40, 0){\VL\Box{10}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Подп.}}
+                    \put(55, 0){\VL\Box{10}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Дата}}
+                    \put(65, 0){\VL\makebox(110,15){\cyrillicfont \englishfont \fontsize{18pt}{0pt}\selectfont ДП.АС-59.200043}}
+                    \put(175, 0){\makebox(10,25){\cyrillicfont \itshape \fontsize{8pt}{0pt}\selectfont Лист}}
+                    \put(175, 0){\VL\makebox(10,10){\cyrillicfont \englishfont \fontsize{12pt}{0pt}\selectfont \thepage}}
+                    \put(175,10){\line(1,0){10}}
+                \end{picture}
+    }}}
+    
+    \makeatletter
+    \def\@oddhead{\simpleGrad}
+    \def\@oddfoot{}
+    \makeatother
