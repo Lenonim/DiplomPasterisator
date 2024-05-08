@@ -21,5 +21,8 @@ if exist practice_report\out\ (
 if exist practice_report\svg-inkscape\ (
   rmdir /s /q practice_report\svg-inkscape
 )
+if exist summary\out\ (
+  rmdir /s /q summary\out
+)
 chcp 866
 end
