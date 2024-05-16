@@ -1,24 +1,22 @@
-\documentclass[12pt, А4, twoside]{article} % задаём тип документа: статья - и его характеристики: 12-ый стандартный шрифт, размер листа А4
+\documentclass[12pt, А4, twoside]{article} 
 
-    % Внимание! Чтобы код ниже работал, необхоидмо переключиться на движок XeLaTe
-    \usepackage{fontspec} % подключаем модуль для работы со шрифтами
-    \PassOptionsToPackage{no-math}{fontspec} %  https://tex.stackexchange.com/a/26295/104425
-    \usepackage{polyglossia} % Поддержка многоязычности
-    \usepackage{ragged2e} % патек для нормального выравнивания текста
-    \usepackage[ % задаём макет документа
-        left=2.8cm, % отступ от левого края 
-        right=1.3cm, % отступ от правого края
-        top=2.0cm, % отсутп сверху
-        bottom=1.59cm, % отступ снизу
+    \usepackage{fontspec} 
+    \PassOptionsToPackage{no-math}{fontspec} 
+    \usepackage{polyglossia}
+    \usepackage{ragged2e} 
+    \usepackage[ 
+        left=2.8cm,  
+        right=1.3cm, 
+        top=2.0cm, 
+        bottom=1.59cm,
     ]{geometry} 
 
-    % настройка шрифтов и языков
     \defaultfontfeatures{Ligatures=TeX,Mapping=tex-text}
 
-    \setmainlanguage[babelshorthands = true]{russian} % устанавливаемя русский как основной язык
-    \setotherlanguage{english} % устанавливаем английский как дополнительный язык
+    \setmainlanguage[babelshorthands = true]{russian} 
+    \setotherlanguage{english}
 
-    \defaultfontfeatures[ArrialNarrow]{ % подключаем шрифт из файлов
+    \defaultfontfeatures[ArrialNarrow]{
         Path = fonts/,
         Extension = .ttf,
         UprightFont = arialnarrow,
@@ -27,47 +25,38 @@
         BoldItalicFont = arialnarrow_bolditalic,
     }
 
-    \setmainfont{Times New Roman} % устанавливаем главный шрифт 
-    \setsansfont[Ligatures=TeX]{ArialNarrow} % устонавливаем дополнительный шрмфт 
+    \setmainfont{Times New Roman}  
+    \setsansfont[Ligatures=TeX]{ArialNarrow} 
 
-    \newfontfamily\cyrillicfont[Script=Cyrillic]{Times New Roman} % делаем так, чтобы русский язык мог отображаться главным шрифтом 
-    \newfontfamily\cyrillicfontsf[Script=Cyrillic]{ArialNarrow} % делаем так, чтобы русский язык мог отображаться дополнительным шрифтом 
+    \newfontfamily\cyrillicfont[Script=Cyrillic]{Times New Roman}  
+    \newfontfamily\cyrillicfontsf[Script=Cyrillic]{ArialNarrow}  
 
-    \newfontfamily\englishfont{Times New Roman} % делаем так, чтобы английский язык мог отображаться главным шрифтом 
-    \newfontfamily\englishfontsf{ArialNarrow} % делаем так, чтобы английский язык мог отображаться дополнительным шрифтом 
+    \newfontfamily\englishfont{Times New Roman}  
+    \newfontfamily\englishfontsf{ArialNarrow} 
 
-    \pagenumbering{gobble} % убирает нумерацию
+    \pagenumbering{gobble} 
 
-\begin{document} % начала тела документа, его основной части
+\begin{document} 
 
 \begin{FlushRight}{\fontsize{11}{13.75}\selectfont \cyrillicfont
         Форма №17
 } \end{FlushRight}
-    % создали область видиния { <здесь текст, который подчиняется заданым настройкам> }
-    % \fontsize{x}{x * msm}\selectfont ползволяет задать размер шрифта и расстоение между строками. msm - межстрочный множитель
-    % \cyrillicfont позволяет использовать TNR для киррилицы
-    % \begin{FlushRight} <текст> \end{FlushRight} позволяет выравнять текст по правому краю
 
 \begin{Center}  {\fontsize{14}{17.5}\selectfont \cyrillicfont 
         УЧРЕЖДЕНИЕ ОБРАЗОВАНИЯ
-        \par % завершает абзац, но тут нужно, чтобы перенести остальную часть на новую сроку
+        \par 
         “БРЕСТСКИЙ ГОСУДАРСТВЕННЫЙ ТЕХНИЧЕСКИЙ УНИВЕРСИТЕТ”
 } \end{Center}
 
-\begin{FlushLeft} % начала глобального выравнивания по левому краю
-\fontsize{12}{15} % дальнейший текст 12pt
+\begin{FlushLeft}
+\fontsize{12}{15}
 
     \begin{tabular}{p{1.8cm} p{6.2cm} p{2.0cm} p{6.0cm}} 
-        % параметр p укащывает тип ячейки, а количество букв p указывает количество столбцов. Можно указать ширину ячейки p{x}. Вместо p можно использовать l, r, c. Ячейки отделяются между собой символом &.
-        & & & % вставляем пустую строку средствами таблицы
-        \\ % переход на ряд ниже
+        & & & 
+        \\ 
         \textsf{Факультет} & 
         \centering \textsf{ФЭИС} \vspace{1pt} \hline &
-        % \centering - выравниваем по центру
-        % \vspace{2pt} - вертикальный отступ
-        % \hline - рисуем линию, которая заполнит ячейку таблицы
         \textsf{Кафедра} &
-        % \textsf{ <текст> } - используем ArialNarrow 
         \centering \textsf{ИИТ} \vspace{1pt} \hline 
     \end{tabular} 
 
@@ -76,16 +65,15 @@
         \textsf{УТВЕРЖДАЮ} & \\
         \textsf{Зав. Кафедрой} & \vspace{1pt} \hline \\ 
         \hspace{2.8cm} &  \centering \textsf{(подпись)} 
-        % \hspace{2.8cm} оно нужно чтобы заполнить ячейку первого ряда, а вообще это горизонтальный отступ.
     \end{tabular} 
 
     \begin{tabular}{p{1.0cm} p{5.0cm} p{2.0cm}} 
-        \textsf{<<18>>} & 
-        \centering \textsf{апреля} \vspace{1pt} \hline &
+        \textsf{<< \hspace{4mm} >>} & 
+        \vspace{1pt} \hline &
         \textsf{2024 г.} \\
     \end{tabular}
 
-\end{FlushLeft} % конец глобального выравнивания по левому краю
+\end{FlushLeft}
 
 \begin{Center} 
     \fontsize{24}{30} \textsf{ЗАДАНИЕ}
@@ -94,7 +82,7 @@
 \end{Center}  
 
 \begin{FlushLeft} 
-\fontsize{12}{15} % дальнейший текст 12pt
+\fontsize{12}{15} 
 
     \begin{tabular}{p{1.9cm} p{14.95cm}}
         \textsf{Студенту} & 
@@ -141,6 +129,7 @@
     \end{tabular}   
 
     \begin{tabular}{p{17.25cm}}
+        \vspace{1pt} \hline \\
         \textsf{4. Содержание расчетно-пояснительной записки (перечень подлежащих разработке вопросов):} \vspace{1pt} \hline \\
     \end{tabular} 
     
@@ -149,11 +138,7 @@
     \end{tabular} 
 
     \begin{tabular}{p{17.25cm}}
-        \hspace{0.3cm} \textsf{1.АНАЛИЗ ПРЕДМЕТНОЙ ОБЛАСТИ И ПОСТАНОВКА ЗАДАЧИ} \vspace{1pt} \hline \\
-        \hspace{0.6cm} \textsf{1.1 Основные понятия предметной области} \vspace{1pt} \hline \\
-        \hspace{0.6cm} \textsf{1.2 Результаты обследования пастеризационной установки} \vspace{1pt} \hline \\
-        \hspace{0.6cm} \textsf{1.3 Введение в прогнозирвоание, нейронные сети и машинное обучение} \vspace{1pt} \hline \\
-        \hspace{0.6cm} \textsf{1.4 Требования к модулю прогнозирования и постановка задачи} \vspace{1pt} \hline \\
+        \hspace{0.3cm} \textsf{1. АНАЛИЗ ПРЕДМЕТНОЙ ОБЛАСТИ И ПОСТАНОВКА ЗАДАЧИ} \vspace{1pt} \hline \\
     \end{tabular}  
 
     \begin{tabular}{p{17.25cm}} 
@@ -162,22 +147,14 @@
 
     \begin{tabular}{p{17.25cm}} 
         \hspace{0.3cm} \textsf{3. АНАЛИЗ И ОБРАБОТКА ДАННЫХ ПАСТЕРИЗАЦИОННОЙ УСТАНОВКИ} \vspace{1pt} \hline \\
-        \hspace{0.6cm} \textsf{3.1 Анализ и визуализация исходных данных технологического процесса} \vspace{1pt} \hline \\
-        \hspace{0.6cm} \textsf{3.4 Обработка данных и их подготовка к прогнозированию} \vspace{1pt} \hline \\
     \end{tabular}    
 
     \begin{tabular}{p{17.25cm}} 
-        \hspace{0.3cm} \textsf{5. РАЗРАБОТКА И ОБУЧЕНИЕ МОДЕЛИ НЕЙРОННОЙ СЕТИ} \vspace{1pt} \hline \\
-        \hspace{0.6cm} \textsf{5.1 Выбор архитектуры нейронной сети} \vspace{1pt} \hline \\
-        \hspace{0.6cm} \textsf{5.2 Описание средств разработки нейронной сети} \vspace{1pt} \hline \\
-        \hspace{0.6cm} \textsf{5.3 Описание разработки и обучения модели нейронной сети} \vspace{1pt} \hline \\
+        \hspace{0.3cm} \textsf{4. РАЗРАБОТКА И ОБУЧЕНИЕ МОДЕЛИ НЕЙРОННОЙ СЕТИ} \vspace{1pt} \hline \\
     \end{tabular}  
 
     \begin{tabular}{p{17.25cm}} 
-        \hspace{0.3cm} \textsf{6. ТЕСТИРОВАНИЕ И ОЦЕНИВАНИЕ МОДЕЛИ} \vspace{1pt} \hline \\
-        \hspace{0.6cm} \textsf{6.1 Обзор методов тестирования и оценивания модели} \vspace{1pt} \hline \\
-        \hspace{0.6cm} \textsf{6.2 Оценивание модели нейронной сети} \vspace{1pt} \hline \\
-        \hspace{0.6cm} \textsf{6.3 Тестирование модели нейронной сети} \vspace{1pt} \hline \\
+        \hspace{0.3cm} \textsf{6. ТЕСТИРОВАНИЕ И ОЦЕНКА МОДЕЛИ} \vspace{1pt} \hline \\
     \end{tabular} 
 
     \begin{tabular}{p{17.25cm}} 
@@ -185,19 +162,45 @@
     \end{tabular}  
 
     \begin{tabular}{p{17.25cm}} 
+        \hspace{0.3cm} \textsf{8. ТЕХНИКО-ЭКОНОМИЧЕСКОЕ ОБОСНОВАНИЕ} \vspace{2pt} \hline \\
+    \end{tabular}  
+
+    \begin{tabular}{p{17.25cm}} 
         \textsf{ЗАКЛЮЧЕНИЕ} \vspace{2pt} \hline \\
+    \end{tabular}  
+
+    \begin{tabular}{p{17.25cm}} 
         \textsf{СПИСОК СОКРАЩЕНИЙ} \vspace{1pt} \hline \\
-        \textsf{СПИСОК ЛИТЕРАТУРЫ} \vspace{2pt} \hline 
+    \end{tabular}  
+
+    \begin{tabular}{p{17.25cm}} 
+        \textsf{СПИСОК ЛИТЕРАТУРЫ} \vspace{2pt} \hline  \\
+    \end{tabular}  
+
+    \begin{tabular}{p{17.25cm}} 
+        \vspace{1pt} \hline  \\
+        \textsf{5. Перечень графического материала (с точным указанием обязательных чертежей и графиков)} \vspace{1pt} \hline \\
+        \vspace{1pt} \hline  \\
     \end{tabular} 
 
     \begin{tabular}{p{17.25cm}} 
         \vspace{1pt} \hline  \\
-        \textsf{\textbf{6. Консультанты по проекту (с указанием относящихся к ним разделов проекта)}} \vspace{1pt} \hline \\
+        \textsf{6. Консультанты по проекту (с указанием относящихся к ним разделов проекта)} \vspace{1pt} \hline \\
+        \hspace{0.3cm} \textsf{ст. преподаватель Иванюк Д. С. {--} по основным разделам} \vspace{1pt} \hline \\
+        \hspace{0.3cm} \textsf{ст. преподаватель {--} нормоконтроль} \vspace{1pt} \hline \\
+        \hspace{0.3cm} \textsf{доцент кафедры МЭМИ, к.э.н., доцент Четырбок Н. П. {--} экономический раздел} \vspace{1pt} \hline \\
     \end{tabular}   
 
     \begin{tabular}{p{17.25cm}} 
-        \vspace{1pt} \hline  \\
-        \textsf{\textbf{7. Дата выдачи задания: 18.04.2024 г.}} \vspace{1pt} \hline \\
+        \vspace{1pt} \hline \\
+        \textsf{7. Дата выдачи задания: 19.04.2024 г.} \vspace{1pt} \hline \\
+    \end{tabular} 
+
+    \begin{tabular}{p{17.25cm}} 
+        \vspace{1pt} \hline \\
+        \textsf{8. Календарный график работы над проектом на весь период проектирования (с указанием} \vspace{1pt} \hline \\
+        \textsf{сроков выполнения и трудоемкость отдельных этапов)} \vspace{1pt} \hline \\
+        \vspace{1pt} \hline \\
     \end{tabular} 
 
     \begin{tabular}{p{4.2cm} p{3.8cm} p{6.0cm} p{2.0cm}} 
@@ -215,19 +218,19 @@
 
 \fontsize{12}{15}
 
-    \begin{tabular}{p{7.5cm} p{0.5cm} p{6.0cm} p{2.0cm}} % создаём таблицу
+    \begin{tabular}{p{7.5cm} p{0.5cm} p{6.0cm} p{2.0cm}} 
         \textsf{Задание принял к исполнению (дата)} & &
-        \centering \textsf{18.04.2024} \vspace{1pt} \hline & 
-        \\ % переход на ряд ниже
-        & & & % вставляем пустую строку средствами таблицы
-    \end{tabular} % конец таблицы
+        \centering \textsf{19.04.2024} \vspace{1pt} \hline & 
+        \\ 
+        & & & 
+    \end{tabular} 
 
-    \begin{tabular}{p{4.0cm} p{0.2cm} p{9.8cm} p{2.0cm}} % создаём таблицу
+    \begin{tabular}{p{4.0cm} p{0.2cm} p{9.8cm} p{2.0cm}}
         \textsf{(подпись студента)} & &
         \vspace{1pt} \hline & 
-        \\ % переход на ряд ниже
-    \end{tabular} % конец таблицы
+        \\ 
+    \end{tabular} 
 
-\end{FlushLeft} % конец выравнивания по левому краю
+\end{FlushLeft} 
 
-\end{document} % конец тела документа, его основной части
+\end{document}
