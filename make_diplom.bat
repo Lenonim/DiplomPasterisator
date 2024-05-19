@@ -8,6 +8,10 @@ if exist task_form\out\ (
   rmdir /s /q task_form\out
 )
 xelatex -interaction=nonstopmode -synctex=1 -output-directory=task_form\out -file-line-error task_form\task_form.tex
+if exist summary\out\ (
+  rmdir /s /q summary\out
+)
+xelatex -interaction=nonstopmode -synctex=1 -output-directory=out -file-line-error -shell-escape main.tex
 if exist diplom\out\ (
   rmdir /s /q diplom\out
 )
