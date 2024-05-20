@@ -53,7 +53,7 @@
     \newcommand\titlespace{\vspace{26pt}} % промежуток между заголовками 
     \newcommand\subtitlespace{\vspace{39pt}} % промежуток между заголовком и текстом 
     \newcommand\gostFont{\cyrillicfont \englishfont \fontsize{13pt}{15.6pt}\selectfont} % набор необходимых параметров для обычного текста
-    \newcommand\gostTitleFont{\cyrillicfont \englishfont \fontsize{14pt}{16.8pt}\selectfont \bfseries} % набор необходимых параметров для текста заголовков
+    \newcommand\gostTitleFont{\cyrillicfont \englishfont \fontsize{13pt}{0pt}\selectfont \bfseries} % набор необходимых параметров для текста заголовков
     \newcommand\gostRamkaFont{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont}
     \parskip=0pt % чтобы между абзацами было расстояние равное межстрочному интервалу
 
@@ -61,43 +61,34 @@
 % Рисует рамку
     \usepackage{xltxtra}
 
-    \textheight=257mm
+    \textheight=260mm
     \textwidth=175mm
     \unitlength=1mm
     
     \oddsidemargin=-0.5mm
     \topmargin=-2.45cm
 
-    \def\VL{\line(0, 1){15}}
+    \def\VL{\line(0,1){15}}
+    \def\HL{\line(1,0){184}}
     \def\Box#1#2{\makebox(#1,5){#2}}
     \def\simpleGrad{\noindent\hbox to 0pt{
             \vbox to 0pt{
-                \noindent\begin{picture}(185,286)(5,0)
+                \noindent\begin{picture}(184,286)(5.5,0.7)
                     \linethickness{0.5mm}
-                    \put(-1, 0){\framebox(185,285){}}
-                    \put(-1, 0){\Box{7}{\gostRamkaFont Изм.}}
-                    \put(-1, 15){\line(1,0){185}}
-                    \put(-1, 5){\line(1,0){65}}
-                    \linethickness{0.25mm}
-                    \put(-1, 10){\line(1,0){65}}
-                    \linethickness{0.5mm}
-                    \put(6, 0){\VL}
-                    \put(6, 0){\Box{10}{\gostRamkaFont Лист.}}
-                    \put(16, 0){\VL}
-                    \put(16, -0.25){\Box{15}{\gostRamkaFont № докум.}}
-                    \put(39, 0){\VL}
-                    \put(39, -0.25){\Box{10}{\gostRamkaFont Подп.}}
-                    \put(54, 0){\VL}
-                    \put(54, -0.25){\Box{10}{\gostRamkaFont Дата}}
-                    \put(64, 0){\VL}
-                    \put(64, 0){\makebox(110,15){\cyrillicfont \englishfont \fontsize{18pt}{0pt}\selectfont ДП.АС59.200043 - 05 81 00}}
-                    \put(174, 0){\makebox(10,25){\gostRamkaFont Лист}}
-                    \put(174, 0){\VL\makebox(10,10){\cyrillicfont \englishfont \fontsize{12pt}{0pt}\selectfont  \thepage}}
-                    \put(174, 10){\line(1,0){10}}
+                    \put(0,0){\framebox(184,286){}}
+                    \put(0,0){\Box{7}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Изм.}}
+                    \put(0, 15)\HL
+                    \multiput(0, 5)(0, 5){2}{\line(1,0){65}}
+                    \put(7, 0){\VL\Box{10}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Лист.}}
+                    \put(17, -0.25){\VL\Box{15}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont № докум.}}
+                    \put(40, 0){\VL\Box{10}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Подп.}}
+                    \put(55, -0.25){\VL\Box{10}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Дата}}
+                    \put(65, 0){\VL\makebox(109,15){\cyrillicfont \englishfont \fontsize{18pt}{0pt}\selectfont ДП.АС-59.200043-05 81 00}}
+                    \put(174, 0){\makebox(10,25){\cyrillicfont \itshape \fontsize{8pt}{0pt}\selectfont Лист}}
+                    \put(174, 0){\VL\makebox(10,10){\cyrillicfont \englishfont \fontsize{12pt}{0pt}\selectfont \thepage}}
+                    \put(174,10){\line(1,0){10}}
                 \end{picture}
-            }
-        }
-    }
+    }}}
     
     \makeatletter
     \def\@oddhead{\simpleGrad}
