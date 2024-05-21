@@ -1,19 +1,19 @@
-\documentclass[12pt, А4, twoside]{article} 
+\documentclass[12pt, А4, twoside]{article}
 
-    \usepackage{fontspec} 
-    \PassOptionsToPackage{no-math}{fontspec} 
+    \usepackage{fontspec}
+    \PassOptionsToPackage{no-math}{fontspec}
     \usepackage{polyglossia}
-    \usepackage{ragged2e} 
-    \usepackage[ 
-        left=2.8cm,  
-        right=1.3cm, 
-        top=0.7cm, 
+    \usepackage{ragged2e}
+    \usepackage[
+        left=2.8cm, 
+        right=1.3cm,
+        top=0.7cm,
         bottom=1.59cm,
-    ]{geometry} 
+    ]{geometry}
 
     \defaultfontfeatures{Ligatures=TeX,Mapping=tex-text}
 
-    \setmainlanguage[babelshorthands = true]{russian} 
+    \setmainlanguage[babelshorthands = true]{russian}
     \setotherlanguage{english}
 
     \defaultfontfeatures[ArrialNarrow]{
@@ -25,198 +25,198 @@
         BoldItalicFont = arialnarrow_bolditalic,
     }
 
-    \setmainfont{Times New Roman}  
-    \setsansfont[Ligatures=TeX]{ArialNarrow} 
+    \setmainfont{Times New Roman}
+    \setsansfont[Ligatures=TeX]{ArialNarrow}
 
-    \newfontfamily\cyrillicfont[Script=Cyrillic]{Times New Roman}  
-    \newfontfamily\cyrillicfontsf[Script=Cyrillic]{ArialNarrow}  
+    \newfontfamily\cyrillicfont[Script=Cyrillic]{Times New Roman}
+    \newfontfamily\cyrillicfontsf[Script=Cyrillic]{ArialNarrow}
 
-    \newfontfamily\englishfont{Times New Roman}  
-    \newfontfamily\englishfontsf{ArialNarrow} 
+    \newfontfamily\englishfont{Times New Roman}
+    \newfontfamily\englishfontsf{ArialNarrow}
 
-    \pagenumbering{gobble} 
+    \pagenumbering{gobble}
 
 \newcommand\vr{\vspace{-0.1cm}}
 
-\begin{document} 
+\begin{document}
 
-\begin{FlushRight}{\fontsize{11}{0}\selectfont \cyrillicfont
+\begin{FlushRight} {\fontsize{11}{0}\selectfont \cyrillicfont
         Форма №17 \hspace{0.4 cm}
 } \end{FlushRight}
 
-\begin{Center}  {\fontsize{14}{0}\selectfont \cyrillicfont 
+\begin{Center} {\fontsize{14}{0}\selectfont \cyrillicfont
         УЧРЕЖДЕНИЕ ОБРАЗОВАНИЯ
-        \par 
+        \par
         “БРЕСТСКИЙ ГОСУДАРСТВЕННЫЙ ТЕХНИЧЕСКИЙ УНИВЕРСИТЕТ”
 } \end{Center}
 
 \begin{FlushLeft}
 \fontsize{12}{15}
 
-    \begin{tabular}{p{1.8cm} p{6.2cm} p{2.0cm} p{6.0cm}} 
-        \textsf{Факультет} & 
+    \begin{tabular}{p{1.8cm} p{6.2cm} p{2.0cm} p{6.0cm}}
+        \textsf{Факультет} &
         \centering \textsf{ФЭИС} \vspace{0pt} \hline &
         \textsf{Кафедра} &
-        \centering \textsf{ИИТ} \vspace{0pt} \hline 
-    \end{tabular} 
+        \centering \textsf{ИИТ} \vspace{0pt} \hline
+    \end{tabular}
 
-    \begin{tabular}{p{2.5cm} p{5.5cm}} 
-        & \\ 
+    \begin{tabular}{p{2.5cm} p{5.5cm}}
+        & \\
         \textsf{УТВЕРЖДАЮ} & \\
-        \textsf{Зав. Кафедрой} & \vspace{0pt} \hline \\ 
-        \hspace{2.8cm} &  \centering \textsf{(подпись)} 
-    \end{tabular} 
+        \textsf{Зав. Кафедрой} & \vspace{0pt} \hline \\
+        \hspace{2.8cm} &  \centering \textsf{(подпись)}
+    \end{tabular}
 
 \vspace{-0.4 cm}
 
-    \begin{tabular}{p{1.0cm} p{5.0cm} p{2.0cm}} 
-        \textsf{<< \hspace{4mm} >>} & 
+    \begin{tabular}{p{1.0cm} p{5.0cm} p{2.0cm}}
+        \textsf{<< \hspace{4mm} >>} &
         \vspace{0pt} \hline &
         \textsf{2024 г.} \\
     \end{tabular}
 
 \end{FlushLeft}
 
-\begin{Center} 
+\begin{Center}
     \fontsize{24}{30} \textsf{ЗАДАНИЕ}
     \par 
     \fontsize{14}{17.5} \textrm{по дипломному проектированию}
-\end{Center}  
+\end{Center}
 
-\begin{FlushLeft} 
-\fontsize{12}{0} 
+\begin{FlushLeft}
+\fontsize{12}{0}
 
     \begin{tabular}{p{1.9cm} p{14.95cm}}
-        \textsf{Студенту} & 
-        \textsf{Абоимову Илье Вадимовичу} \vspace{0pt} \hline 
-    \end{tabular} 
+        \textsf{Студенту} &
+        \textsf{Абоимову Илье Вадимовичу} \vspace{0pt} \hline
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
     \begin{tabular}{p{2.8cm} p{14.05cm}}
-        \textsf{1. Тема проекта} & 
-        \textsf{Разработка модуля прогнозирования данных временных рядов технологического} \vspace{0pt} \hline  
-    \end{tabular} 
+        \textsf{1. Тема проекта} &
+        \textsf{Разработка модуля прогнозирования данных временных рядов технологического} \vspace{0pt} \hline
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{2.8cm} p{14.05cm}} 
-        & \textsf{процесса пастеризационной установки} \vspace{0pt} \hline 
-    \end{tabular} 
+    \begin{tabular}{p{2.8cm} p{14.05cm}}
+        & \textsf{процесса пастеризационной установки} \vspace{0pt} \hline
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{5.9cm} p{4.8cm} p{0.3cm} p{5.0cm}} 
+    \begin{tabular}{p{5.9cm} p{4.8cm} p{0.3cm} p{5.0cm}}
         \textsf{(Утверждена приказом по вузу от} &
         \centering \textsf{13.03.2024} \vspace{1pt} \hline &
         \centering \textsf{№} &
         \centering \textsf{249-C \hspace{0.5cm} )} \hline
-    \end{tabular} 
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{9.4cm} p{7.45cm}} 
+    \begin{tabular}{p{9.4cm} p{7.45cm}}
         \textsf{2. Сроки сдачи студентом законченного проекта} &
         \centering \textsf{07.06.2024} \vspace{1pt} \hline
-    \end{tabular} 
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{5.7cm} p{11.15cm}} 
+    \begin{tabular}{p{5.7cm} p{11.15cm}}
         \textsf{3. Исходные данные к проекту} &
-        \vspace{0pt} \hline
-    \end{tabular}   
+        \vspace{1pt} \hline
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}}  
+    \begin{tabular}{p{17.25cm}}
         \hspace{0.3cm} \textsf{Особенности разработки:} \vspace{0pt} \hline \\
     \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}}  
+    \begin{tabular}{p{17.25cm}}
         \hspace{0.6cm} \textsf{- Модуль должен быть развёрнут на платформе PLCnext Technology} \vspace{0pt} \hline \\
     \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}}  
+    \begin{tabular}{p{17.25cm}}
         \hspace{0.6cm} \textsf{- Текст программы модуля должен быть написан на C++}\vspace{0pt} \hline \\
     \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}}  
+    \begin{tabular}{p{17.25cm}}
         \hspace{0.6cm} \textsf{- Программа должна быть кроссплатформенной}\vspace{0pt} \hline 
-    \end{tabular}   
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
+    \begin{tabular}{p{17.25cm}}
         \hspace{0.3cm} \textsf{Требования к функция модуля:} \vspace{0pt} \hline \\
-    \end{tabular}  
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
+    \begin{tabular}{p{17.25cm}}
         \hspace{0.6cm} \textsf{- Модуль должен выполнять прогнозирование технологического процесса}\vspace{0pt} \hline \\
-    \end{tabular}  
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
+    \begin{tabular}{p{17.25cm}}
         \hspace{0.6cm} \textsf{- Модуль должен работать в режиме реального времени}\vspace{0pt} \hline 
-    \end{tabular}   
+    \end{tabular}
 
     \vspace{-0.1 cm}
-    
+
     \begin{tabular}{p{17.25cm}}
         \vspace{0pt} \hline \\
         \textsf{4. Содержание расчетно-пояснительной записки (перечень подлежащих разработке вопросов):} \vspace{0pt} \hline \\
-    \end{tabular} 
-    
+    \end{tabular}
+
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
+    \begin{tabular}{p{17.25cm}}
         \hspace{0.3cm} \textsf{ВВЕДЕНИЕ} \vspace{0pt} \hline \\
-    \end{tabular} 
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
     \begin{tabular}{p{17.25cm}}
         \hspace{0.3cm} \textsf{1. АНАЛИЗ ПРЕДМЕТНОЙ ОБЛАСТИ И ПОСТАНОВКА ЗАДАЧИ} \vspace{0pt} \hline \\
-    \end{tabular}  
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
+    \begin{tabular}{p{17.25cm}}
         \hspace{0.3cm} \textsf{2. АНАЛИЗ СУЩЕСТВУЮЩИХ РЕШЕНИЙ} \vspace{0pt} \hline \\
-    \end{tabular} 
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
+    \begin{tabular}{p{17.25cm}}
         \hspace{0.3cm} \textsf{3. АНАЛИЗ И ОБРАБОТКА ДАННЫХ ПАСТЕРИЗАЦИОННОЙ УСТАНОВКИ} \vspace{0pt} \hline \\
-    \end{tabular}    
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
+    \begin{tabular}{p{17.25cm}}
         \hspace{0.3cm} \textsf{4. РАЗРАБОТКА И ОБУЧЕНИЕ МОДЕЛИ НЕЙРОННОЙ СЕТИ} \vspace{0pt} \hline \\
-    \end{tabular}  
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
+    \begin{tabular}{p{17.25cm}}
         \hspace{0.3cm} \textsf{5. ТЕСТИРОВАНИЕ И ОЦЕНКА МОДЕЛИ} \vspace{0pt} \hline \\
-    \end{tabular} 
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
+    \begin{tabular}{p{17.25cm}}
         \hspace{0.3cm} \textsf{6. РАЗВЁРТЫВАНИЕ МОДЕЛИ НЕЙРОННОЙ СЕТИ} \vspace{0pt} \hline \\
-    \end{tabular}  
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
@@ -226,68 +226,68 @@
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
-        \textsf{ЗАКЛЮЧЕНИЕ} \vspace{1pt} \hline \\
-    \end{tabular}  
-
-    \vspace{-0.1 cm}
-
-    \begin{tabular}{p{17.25cm}} 
-        \textsf{СПИСОК СОКРАЩЕНИЙ} \vspace{0pt} \hline \\
-    \end{tabular}  
-
-    \vspace{-0.1 cm}
-
-    \begin{tabular}{p{17.25cm}} 
-        \textsf{СПИСОК ЛИТЕРАТУРЫ} \vspace{1pt} \hline  \\
-    \end{tabular}  
-
-    \vspace{-0.1 cm}
-
-    \begin{tabular}{p{17.25cm}} 
-        \textsf{ПРИЛОЖЕНИЕ А: Текст программы} \vspace{1pt} \hline  \\
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{ЗАКЛЮЧЕНИЕ} \vspace{1pt} \hline \\
     \end{tabular}
-    
+
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{СПИСОК СОКРАЩЕНИЙ} \vspace{0pt} \hline \\
+    \end{tabular}
+
+    \vspace{-0.1 cm}
+
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{СПИСОК ЛИТЕРАТУРЫ} \vspace{1pt} \hline  \\
+    \end{tabular}
+
+    \vspace{-0.1 cm}
+
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{ПРИЛОЖЕНИЕ А: ТЕКСТ ПРОГРАММЫ} \vspace{1pt} \hline  \\
+    \end{tabular}
+
+    \vspace{-0.1 cm}
+
+    \begin{tabular}{p{17.25cm}}
         \vspace{0pt} \hline \\
         \textsf{5. Перечень графического материала (с точным указанием обязательных чертежей и графиков)} \vspace{0pt} \hline \\
-    \end{tabular} 
-    
+    \end{tabular}
+
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
+    \begin{tabular}{p{17.25cm}}
         \hspace{0.3cm} \textsf{1. Схема пастеризационной установки (плакат {--} формат А1)} \vspace{0pt} \hline  \\
-    \end{tabular} 
-    
-    \vspace{-0.1 cm}
-
-    \begin{tabular}{p{17.25cm}} 
-        \hspace{0.3cm} \textsf{2. Схема взаимодействия программ (плакат {--} формат А1)} \vspace{0pt} \hline  \\
-    \end{tabular} 
-    
-    \vspace{-0.1 cm}
-    
-    \begin{tabular}{p{17.25cm}} 
-        \hspace{0.3cm} \textsf{3. Пример визуализации обучающего, контрольного и тестового наборов (плакат) {--} формат А1} \vspace{0pt} \hline  \\
-    \end{tabular} 
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
-        \hspace{0.3cm} \textsf{4. Классическая схема нейронной сети LSTM (чертёж {--} формат А1)} \vspace{0pt} \hline  \\
-    \end{tabular} 
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{2. Классическая схема нейронной сети LSTM (плакат {--} формат А1)} \vspace{0pt} \hline  \\
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
-        \hspace{0.3cm} \textsf{5. Блок-схема формирования предсказаний нейронной сети (чертёж {--} формат А1)} \vspace{0pt} \hline  \\
-    \end{tabular} 
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{3. Пример визуализации обучающего, контрольного и тестового наборов (плакат {--} формат А1)} \vspace{0pt} \hline  \\
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{4. Схема взаимодействия программ (чертёж {--} формат А1)} \vspace{0pt} \hline  \\
+    \end{tabular}
+
+    \vspace{-0.1 cm}
+
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{5. Блок-схема алгоритма прогнозирования с помощью нейронной сети LSTM (чертёж {--} формат А1)} \vspace{0pt} \hline  \\
+    \end{tabular}
+
+    \vspace{-0.1 cm}
+
+    \begin{tabular}{p{17.25cm}}
         \vspace{0pt} \hline  \\
     \end{tabular}
 
@@ -299,128 +299,134 @@
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
-        \hspace{0.3cm} \textsf{ст. преподаватель Иванюк Д. С. {--} по основным разделам} \vspace{0pt} \hline \\
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{ст. преподаватель Иванюк Д. С.} \hspace{4.065cm} \textsf{{--} по основным разделам} \vspace{0pt} \hline \\
     \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
-        \hspace{0.3cm} \textsf{ассистент кафедры ИИТ Булей Е. В. {--} нормоконтроль} \vspace{0pt} \hline \\
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{ассистент кафедры ИИТ Булей Е. В.} \hspace{3.3325cm} \textsf{{--} нормоконтроль} \vspace{0pt} \hline \\
     \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
-        \hspace{0.3cm} \textsf{доцент кафедры МЭМИ, к.э.н., доцент Четырбок Н. П. {--} экономический раздел} \vspace{0pt} \hline \\
-    \end{tabular}   
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{доцент кафедры МЭМИ, к.э.н., доцент Четырбок Н. П.} \hspace{0.5cm} \textsf{{--} экономический раздел}\vspace{0pt} \hline \\
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
+    \begin{tabular}{p{17.25cm}}
         \vspace{0pt} \hline \\
-    \end{tabular}   
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
+    \begin{tabular}{p{17.25cm}}
         \textsf{7. Дата выдачи задания: 19.04.2024 г.} \vspace{0pt} \hline \\
-    \end{tabular} 
-
-    \vspace{-0.1 cm}
-
-    \begin{tabular}{p{17.25cm}} 
-        \vspace{0pt} \hline \\
-    \end{tabular} 
-
-    \vspace{-0.1 cm}
-
-    \begin{tabular}{p{17.25cm}} 
-        \textsf{8. Календарный график работы над проектом на весь период проектирования (с указанием сроков} \vspace{0pt} \hline \\
-    \end{tabular} 
-
-    \vspace{-0.1 cm}
-
-    \begin{tabular}{p{17.25cm}} 
-        \textsf{сроков выполнения и трудоемкость отдельных этапов)} \vspace{0pt} \hline \\
-    \end{tabular} 
-
-    \vspace{-0.1 cm}
-
-    \begin{tabular}{p{17.25cm}} 
-        \hspace{0.3cm} \textsf{Раздел 1:} \hspace{2.54cm} \textsf{ 19.04 - 25.04:} \hspace{0.5cm} \textsf{10\%} \vspace{0pt} \hline \\
-    \end{tabular} 
-
-    \vspace{-0.1 cm}
-
-    \begin{tabular}{p{17.25cm}} 
-        \hspace{0.3cm} \textsf{Раздел 2:} \hspace{2.54cm} \textsf{ 26.04 - 29.04:} \hspace{0.5cm} \textsf{5\%} \vspace{0pt} \hline \\
-    \end{tabular} 
-
-    \vspace{-0.1 cm}
-
-    \begin{tabular}{p{17.25cm}} 
-        \hspace{0.3cm} \textsf{Раздел 3:} \hspace{2.54cm} \textsf{ 30.04 - 05.05:} \hspace{0.5cm} \textsf{15\%} \vspace{0pt} \hline \\
     \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}}  
-        \hspace{0.3cm} \textsf{Раздел 4:} \hspace{2.54cm} \textsf{ 06.05 - 12.05:} \hspace{0.5cm} \textsf{15\%} \vspace{0pt} \hline \\
-    \end{tabular} 
+    \begin{tabular}{p{17.25cm}}
+        \vspace{0pt} \hline \\
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
-        \hspace{0.3cm} \textsf{Раздел 5:} \hspace{2.54cm} \textsf{ 13.05 - 18.05:} \hspace{0.5cm} \textsf{10\%} \vspace{0pt} \hline \\
-    \end{tabular} 
+    \begin{tabular}{p{17.25cm}}
+        \textsf{8. Календарный график работы над проектом на весь период проектирования (с указанием сроков} \vspace{0pt} \hline \\
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
-        \hspace{0.3cm} \textsf{Раздел 6:} \hspace{2.54cm} \textsf{ 19.05 - 25.05:} \hspace{0.5cm} \textsf{15\%} \vspace{0pt} \hline \\
-    \end{tabular} 
+    \begin{tabular}{p{17.25cm}}
+        \textsf{выполнения и трудоемкость отдельных этапов)} \vspace{0pt} \hline \\
+    \end{tabular}
 
     \vspace{-0.1 cm}
 
-    \begin{tabular}{p{17.25cm}} 
-        \hspace{0.3cm} \textsf{Раздел 7:} \hspace{2.54cm} \textsf{ 26.05 - 01.06:} \hspace{0.5cm} \textsf{10\%} \vspace{0pt} \hline \\
-    \end{tabular} 
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{Раздел 1:} \hspace{2.54cm} \textsf{ 19.04 {--} 25.04:} \hspace{0.5cm} \textsf{10\%} \vspace{0pt} \hline \\
+    \end{tabular}
 
     \vspace{-0.1 cm}
-    
-    \begin{tabular}{p{17.25cm}} 
-        \hspace{0.3cm} \textsf{Оформление проекта:} \hspace{0.5cm} \textsf{ 02.06 - 07.06:} \hspace{0.5cm} \textsf{20\%} \vspace{0pt} \hline \\
-    \end{tabular} 
 
-    \begin{tabular}{p{4.2cm} p{3.8cm} p{6.0cm} p{2.0cm}} 
-        & & & 
-        \\ 
-        & & & 
-        \\
-        & \fontsize{14}{17.5} \textsf{Руководитель} & 
-        \vspace{0pt} \hline & 
-        \\ 
-        & & \centering \fontsize{12}{15} \textsf{(подпись)} & 
-        \\ 
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{Раздел 2:} \hspace{2.54cm} \textsf{ 26.04 {--} 29.04:} \hspace{0.5cm} \textsf{5\%} \vspace{0pt} \hline \\
+    \end{tabular}
+
+    \vspace{-0.1 cm}
+
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{Раздел 3:} \hspace{2.54cm} \textsf{ 30.04 {--} 05.05:} \hspace{0.5cm} \textsf{15\%} \vspace{0pt} \hline \\
+    \end{tabular}
+
+    \vspace{-0.1 cm}
+
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{Раздел 4:} \hspace{2.54cm} \textsf{ 06.05 {--} 12.05:} \hspace{0.5cm} \textsf{15\%} \vspace{0pt} \hline \\
+    \end{tabular}
+
+    \vspace{-0.1 cm}
+
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{Раздел 5:} \hspace{2.54cm} \textsf{ 13.05 {--} 18.05:} \hspace{0.5cm} \textsf{10\%} \vspace{0pt} \hline \\
+    \end{tabular}
+
+    \vspace{-0.1 cm}
+
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{Раздел 6:} \hspace{2.54cm} \textsf{ 19.05 {--} 25.05:} \hspace{0.5cm} \textsf{15\%} \vspace{0pt} \hline \\
+    \end{tabular}
+
+    \vspace{-0.1 cm}
+
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{Раздел 7:} \hspace{2.54cm} \textsf{ 26.05 {--} 01.06:} \hspace{0.5cm} \textsf{10\%} \vspace{0pt} \hline \\
+    \end{tabular}
+
+    \vspace{-0.1 cm}
+
+    \begin{tabular}{p{17.25cm}}
+        \hspace{0.3cm} \textsf{Оформление проекта:} \hspace{0.5cm} \textsf{ 02.06 {--} 07.06:} \hspace{0.5cm} \textsf{20\%} \vspace{0pt} \hline \\
+    \end{tabular}
+
+    \vspace{-0.1 cm}
+
+    \begin{tabular}{p{17.25cm}}
+        \vspace{0pt} \hline \\
+    \end{tabular}
+
+    \begin{tabular}{p{4.2cm} p{3.8cm} p{6.0cm} p{2.0cm}}
         & & &
-    \end{tabular} 
+        \\
+        & & &
+        \\
+        & \fontsize{14}{17.5} \textsf{Руководитель} &
+        \vspace{0pt} \hline &
+        \\
+        & & \centering \fontsize{12}{15} \textsf{(подпись)} &
+        \\
+        & & &
+    \end{tabular}
 
 \fontsize{12}{15}
 
-    \begin{tabular}{p{7.5cm} p{0.5cm} p{6.0cm} p{2.0cm}} 
+    \begin{tabular}{p{7.5cm} p{0.5cm} p{6.0cm} p{2.0cm}}
         \textsf{Задание принял к исполнению (дата)} & &
-        \centering \textsf{19.04.2024} \vspace{1pt} \hline & 
-        \\ 
-        & & & 
-    \end{tabular} 
+        \centering \textsf{19.04.2024} \vspace{1pt} \hline &
+        \\
+        & & &
+    \end{tabular}
 
     \begin{tabular}{p{4.0cm} p{0.2cm} p{9.8cm} p{2.0cm}}
         \textsf{(подпись студента)} & &
-        \vspace{0pt} \hline & 
+        \vspace{0pt} \hline &
         \\ 
-    \end{tabular} 
+    \end{tabular}
 
-\end{FlushLeft} 
+\end{FlushLeft}
 
 \end{document}
