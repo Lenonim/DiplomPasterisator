@@ -24,6 +24,8 @@
 
 \usepackage{caption} % для того, чтобы редактировать подписи к картинкам
 
+\usepackage{float} % чтобы нормально располагались картинки
+
 \usepackage{enumitem}
 \setlist[enumerate]{align=left}
 
@@ -49,6 +51,7 @@
     \newfontfamily\englishfontsf{Arial} % делаем так, чтобы английский язык мог отображаться дополнительным шрифтом 
 
 % Определяем переменные 
+    \newcommand\spc{\hspace{0.08cm}} % отступ от каунтера
     \newcommand\redline{\hspace{1.5cm}} % красная строка
     \newcommand\titlespace{\vspace{26pt}} % промежуток между заголовками 
     \newcommand\subtitlespace{\vspace{39pt}} % промежуток между заголовком и текстом 
@@ -68,29 +71,46 @@
     \oddsidemargin=-0.5mm
     \topmargin=-2.45cm
 
-    \def\VL{\line(0,1){15}}
-    \def\HL{\line(1,0){184}}
     \def\Box#1#2{\makebox(#1,5){#2}}
     \def\simpleGrad{\noindent\hbox to 0pt{
             \vbox to 0pt{
-                \noindent\begin{picture}(184,286)(5.5,0.7)
+                \noindent\begin{picture}(185,287)(5.5,0.7)
                     \linethickness{0.5mm}
-                    \put(0,0){\framebox(184,286){}}
+                    \put(0,0){\framebox(185,287){}}
                     \put(0,0){\Box{7}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Изм.}}
-                    \put(0, 15)\HL
+                    \put(0, 15){\line(1,0){185}}
                     \multiput(0, 5)(0, 5){2}{\line(1,0){65}}
-                    \put(7, 0){\VL\Box{10}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Лист.}}
-                    \put(17, -0.25){\VL\Box{15}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont № докум.}}
-                    \put(40, 0){\VL\Box{10}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Подп.}}
-                    \put(55, -0.25){\VL\Box{10}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Дата}}
-                    \put(65, 0){\VL\makebox(109,15){\cyrillicfont \englishfont \fontsize{18pt}{0pt}\selectfont ДП.АС-59.200043-05 81 00}}
-                    \put(174, 0){\makebox(10,25){\cyrillicfont \itshape \fontsize{8pt}{0pt}\selectfont Лист}}
-                    \put(174, 0){\VL\makebox(10,10){\cyrillicfont \englishfont \fontsize{12pt}{0pt}\selectfont \thepage}}
-                    \put(174,10){\line(1,0){10}}
+                    \put(7, 0){\line(0,1){15}}
+                    \put(7, 0){\Box{10}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Лист.}}
+                    \put(17, -0.25){\line(0,1){15}}
+                    \put(17, -0.25){\Box{15}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont № докум.}}
+                    \put(40, 0){\line(0,1){15}}
+                    \put(40, 0){\Box{10}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Подп.}}
+                    \put(55, -0.25){\line(0,1){15}}
+                    \put(55, -0.25){\Box{10}{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont Дата}}
+                    \put(65, 0){\line(0,1){15}}
+                    \put(65, 0){\makebox(109,15){\cyrillicfont \englishfont \fontsize{18pt}{0pt}\selectfont ДП.АС59.200043-05 81 00}}
+                    \put(175, 0){\makebox(10,25){\cyrillicfont \itshape \fontsize{8pt}{0pt}\selectfont Лист}}
+                    \put(175, 0){\line(0,1){15}}
+                    \put(175, 0){\makebox(10,10){\cyrillicfont \englishfont \fontsize{12pt}{0pt}\selectfont \thepage}}
+                    \put(175,10){\line(1,0){10}}
                 \end{picture}
-    }}}
+            }
+        }
+    }
     
     \makeatletter
     \def\@oddhead{\simpleGrad}
     \def\@oddfoot{}
     \makeatother
+
+    \newcounter{chaptercntr}
+    \newcounter{subchaptercntr}
+    \setcounter{subchaptercntr}{1}
+    \newcounter{formulacntr}
+    \setcounter{formulacntr}{1}
+    \newcounter{imagecntr}
+    \setcounter{imagecntr}{1}
+
+
+    \usepackage{amsmath}
