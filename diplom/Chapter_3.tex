@@ -7,7 +7,7 @@
   АНАЛИЗ И ОБРАБОТКА ДАННЫХ ПАСТЕРИЗАЦИОННОЙ УСТАНОВКИ
 }
 
-\subtitlespace
+\titlespace
 
 \subsection*{ 
   \gostTitleFont
@@ -16,7 +16,7 @@
   Анализ и визуализация исходных данных технологического процесса
 } \addtocounter{subchaptercntr}{1}
 
-\titlespace
+\subtitlespace
 
 {\gostFont
 
@@ -44,36 +44,35 @@
 
   \par \redline Для дальнейшего описания данных необходимо их визуализировать. 
 
-  \begin{figure}
+  \begin{sidewaysfigure}
     \centering
     \def\svgwidth{\textwidth}
-    \includegraphics[width=\textwidth]{images/data_1_visual.jpg}
+    \includegraphics[scale=0.6]{images/data_1_visual.jpg}
     \caption*{\gostFont Рисунок \thechaptercntr .\theimagecntr \spc {--} Визуализация данный 1-ого файла.}
     \label{fig:NNBlackBox}
-  \end{figure} \addtocounter{imagecntr}{1}
+  \end{sidewaysfigure} \addtocounter{imagecntr}{1}
 
-  \begin{figure}
+  \begin{sidewaysfigure}
     \centering
     \def\svgwidth{\textwidth}
-    \includegraphics[width=\textwidth]{images/data_1_visual.jpg}
-    \caption*{\gostFont Рисунок \thechaptercntr .\theimagecntr \spc {--} Визуализация данный 2-ого файла с растяжением масштаба по оси абсцисс.}
+    \includegraphics[scale=0.6]{images/data_2_visual.jpg}
+    \caption*{\gostFont Рисунок \thechaptercntr .\theimagecntr \spc {--} Визуализация данный 2-ого файла с растянутым масштабом по оси абсцисс.}
     \label{fig:NNBlackBox}
-  \end{figure} \addtocounter{imagecntr}{1}
+  \end{sidewaysfigure} \addtocounter{imagecntr}{1}
 
-  \begin{figure}
+  \begin{sidewaysfigure}
     \centering
     \def\svgwidth{\textwidth}
-    \includegraphics[width=\textwidth]{images/data_1_visual.jpg}
-    \caption*{\gostFont Рисунок 3.4: Визуализация данный 3-ого файла с cуженным масштаба по оси абсцисс.}
+    \includegraphics[scale=0.6]{images/data_3_visual.jpg}
+    \caption*{\gostFont Рисунок \thechaptercntr .\theimagecntr \spc {--} Визуализация данный 3-ого файла с cуженным масштабом по оси абсцисс.}
     \label{fig:NNBlackBox}
-  \end{figure} \addtocounter{imagecntr}{1}
+  \end{sidewaysfigure} \addtocounter{imagecntr}{1}
 
   \par \redline Сравнивая данные на рисунках 3.2, 3.3 и 3.4, хотелось бы пояснить, что данные остальных файлов очень похожи с данными на представленных рисунках. Из этого делаем вывод, что данные могут содержать аномалии, поскольку схожее поведение пастеризационной установки средствами визуализации в других файлах выявлено не было. Это значит, что мы имеем большинство данных без аномалий, но также имеем и примеры данных с аномалиями. 
 
   \par \redline Продолжим изучение данных.
 
   ИНФОГРАФИКА
-
 
   \par \redline Теперь пришло время определить связи между параметрами пастеризационной установки. Беря во внимание всю собранную о данных и самой пастеризационной установки информацию, а также общение с персоналом, ответственные за работу установки, удалось более подробно сформулировать задачу данной работы. Необходимо пронозировать технологический процесс пастеризационной установки, но это подразумевает прогнозирование трёх величин: расход, температура гомогенизации и температура пастеризации. В случае же с параметрами, описывающими степень открытия паровых клапанов и мощность циркуляционного насоса, то их прогнозировать нет необходимости, поскольку они изменяются в зависимости от сигналов регуляторов. 
 
