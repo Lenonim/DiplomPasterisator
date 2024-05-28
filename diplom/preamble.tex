@@ -8,7 +8,7 @@
 
 \usepackage{geometry} % пакет для работы с разметкой страницы
 \geometry{left=2.5cm} % левый отступ
-\geometry{right=1.0cm} % правый отступ
+\geometry{right=10.0cm} % правый отступ
 \geometry{top=1.0cm} % верхний отступ
 \geometry{bottom=2.5cm} % нижний отступ
 
@@ -28,10 +28,16 @@
 
 \usepackage{float} % чтобы нормально располагались картинки
 
-\usepackage{amsmath}
+\usepackage{amsmath} % для нормальной работы с формулами
 
-\usepackage{enumitem}
-\setlist[enumerate]{align=left}
+\usepackage{amsfonts} % для оборажения русских символов в формулах
+
+\usepackage{enumerate, enumitem} % 
+\setlist[itemize]{align=left} % выравнивание по левому краю в лейблах списков
+
+\usepackage{multirow} % для возможности объединения ячеек
+
+\usepackage{stackengine} 
 
 % настройка шрифтов и языков
     \usepackage[english, russian]{babel} % для работы с английским и русским языками
@@ -57,13 +63,14 @@
 % Определяем переменные 
     \newcommand\spc{\hspace{0.08cm}} % отступ от каунтера
     \newcommand\redline{\hspace{1.5cm}} % красная строка
+    \newcommand\formulaspace{\vspace{0.4cm}} % красная строка
+    \newcommand\wherespace{\hspace{0.7cm}} % отступ для пояслений к формулам
     \newcommand\titlespace{\vspace{26pt}} % промежуток между заголовками 
     \newcommand\subtitlespace{\vspace{39pt}} % промежуток между заголовком и текстом 
     \newcommand\gostFont{\cyrillicfont \englishfont \fontsize{13pt}{15.6pt}\selectfont} % набор необходимых параметров для обычного текста
     \newcommand\gostTitleFont{\cyrillicfont \englishfont \fontsize{13pt}{0pt}\selectfont \bfseries} % набор необходимых параметров для текста заголовков
     \newcommand\gostRamkaFont{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont}
     \parskip=0pt % чтобы между абзацами было расстояние равное межстрочному интервалу
-
 
 % Рисует рамку
     \usepackage{xltxtra}
@@ -120,3 +127,7 @@
     \setcounter{formulacntr}{1}
     \newcounter{imagecntr}
     \setcounter{imagecntr}{1}
+    \newcounter{litcntr}
+    \setcounter{litcntr}{1}
+    \newcounter{tablecntr}
+    \setcounter{tablecntr}{1}
