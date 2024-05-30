@@ -34,7 +34,7 @@
 	\par \redline •  Расчёт полной себестоимости криптографической защиты.
 	
 	\par \redline •  Расчёт цены и прибыли по программному продукту.
-	
+
 }
 
 \subtitlespace
@@ -50,49 +50,61 @@
 
 {\gostFont
 	
-	\par \redline Общий объём ПО определяется по формуле (6.1), исходя из объёма функций, реализуемых программой. 
+	\par \redline Общий объём ПО определяется по формуле (\thechaptercntr .\theformulacntr), исходя из объёма функций, реализуемых программой. 
 	
-	\formulaspace
-	\par \redline $ V_0=\sum_{i=0}^{n}V_i$ \hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace \par \redline 
+	$V_0=\sum_{i=0}^{n}V_i$ 
+	\hfill (\thechaptercntr .\theformulacntr) \redline
 	\formulaspace \addtocounter{formulacntr}{1}
 
 	\par \redline где $V_0$ {--} общий объём ПО;
-	
 	\par \redline \wherespace $V_i$ {--} объём функций ПО;
-	
 	\par \redline \wherespace n {--} общее число функций.
 	
 	\par \redline В том случае, когда на стадии технико-экономического обоснования проекта невозможно рассчитать точный объём функций, то данный объём может быть получен на основании прогнозируемой оценки имеющихся фактических данных по аналогичным проектам, выполненным ранее, или применением нормативов по каталогу функций.
 	
 	\par \redline По каталогу функций на основании функций разрабатываемых криптографических модулей определяется общий объём. Также на основе зависимостей от организационных и технологических условий, был скорректирован объём на основе экспертных оценок.
 	
-	\par \redline Уточнённый объём ПО определяется по формуле (6.2).
+	\par \redline Уточнённый объём ПО определяется по формуле (\thechaptercntr .\theformulacntr).
 	
-	\formulaspace
-	\par \redline $V_y=\sum_{i=0}^{n}V_yi$ \hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace \par \redline 
+	$V_y=\sum_{i=0}^{n}V_{yi}$ 
+	\hfill (\thechaptercntr .\theformulacntr) \redline
 	\formulaspace \addtocounter{formulacntr}{1}
 	
-	\par \redline где \wherespace $V_y$ {--} уточнённый объём ПО;
-	
+	\par \redline где $V_y$ {--} уточнённый объём ПО;
 	\par \redline \wherespace $V_{yi}$ {--} уточнённый объём отдельной функции в строках исходного кода.
 	
 	\par \redline Перечень и объём функций модулей криптографии приведён в таблице \thechaptercntr .\thetablecntr .
 
-	\par \redline \par \redline
+	\par \redline
 
-	\begin{flushleft}
-		\par \centering Таблица \thechaptercntr .\thetablecntr \spc {--} Перечень и объем функций программного обеспечения
-	\end{flushleft}
+	{\begin{Center} 
+		\par Таблица \thechaptercntr .\thetablecntr \spc {--} Перечень и объем функций программного обеспечения 
 
-	\begin{figure}
-		\centering
-		\def\svgwidth{\textwidth}
-		\includegraphics[scale=1.0]{images/elonomT1.png}
-		\label{fig:ekonomT1}
-	\end{figure}
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		Номер  				 & Наименование (содержание) 			& \multicolumn{2}{c|}{Объём функции строк исходного кода} \\ \cline{3-4}
+  		функции			     & функции								& По каталогу $V_y$     & Уточнённый $V_{yi}$ 			  \\ \hline
+		101 				 & Организация ввода информации         & 150 				    & 180 					          \\ \hline
+		\multirow{2}{*}{102} & Контроль, предварительная  			& \multirow{2}{*}{550}  & \multirow{2}{*}{450} 			  \\
+		                     & обработка и ввод информации			&                       &                      		      \\ \hline
+		303                  & Обработка файлов						& 1100				    & 570							  \\ \hline
+		305                  & Формирование файла					& 2460				    & 280							  \\ \hline
+		\multirow{2}{*}{507} & Обеспечение интерфейса				& \multirow{2}{*}{1820} & \multirow{2}{*}{720} 			  \\
+							 & между компонентами        			&                       &                      		      \\ \hline
+		\multirow{2}{*}{602} & Вспомогательные и 					& \multirow{2}{*}{580}  & \multirow{2}{*}{830}			  \\ 
+							 & сервисные программ        			&                       &                      		      \\ \hline
+		\multirow{2}{*}{701} & Математическая статистика и			& \multirow{2}{*}{4560} & \multirow{2}{*}{2570}			  \\ 
+							 & прогнозирование	        			&                       &                      		      \\ \hline
+		703                  & Расчет показателей					& 460				    & 830							  \\ \hline
+		                     & ИТОГО								& 11530				    & 6430							  \\ \hline
+	\end{tabular} \end{Center}}
 
-	\par \redline Учитывая информацию, указанную в таблице \thechaptercntr .\thetablecntr \spc, о функциях разрабатываемого программного обеспечения, уточненный объем ПО ($V_{yi}$) составил 6430 строк исходного кода (LOC) вместо предполагаемого количества строк 11530. \addtocounter{tablecntr}{1}
-	
+	\formulaspace
+
+	\redline Учитывая информацию, указанную в таблице \thechaptercntr .\thetablecntr, о функциях разрабатываемого программного обеспечения, уточненный объем ПО ($V_{yi}$) составил 6430 строк исходного кода вместо предполагаемого количества строк 11530. \addtocounter{tablecntr}{1}
+
 	\par
 }
 
@@ -112,68 +124,349 @@
 	\par \redline Стоимостная оценка программного средства у разработчика предполагает составление сметы затрат, которая включает следующие статьи расходов:
 	
 	\par \redline • заработную плату исполнителей (основную – ЗПо и дополнительную – ЗПд);
-	\par \redline •	отчисления на социальные нужды (Рсоц);
-	\par \redline •	материалы и комплектующие изделия (Рм);
-	\par \redline •	спецоборудование (Рс);
-	\par \redline •	машинное время (Рмв);
-	\par \redline •	расходы на научные командировки (Рнк):
-	\par \redline •	прочие прямые расходы (Рпр);
-	\par \redline •	накладные расходы (Рнр);
-	\par \redline •	затраты на освоение и сопровождение программного средства(Ро и Рсо).
+	\par \redline •	отчисления на социальные нужды ($\textrm{Р}_{\textrm{соц}}$);
+	\par \redline •	материалы и комплектующие изделия ($\textrm{Р}_{\textrm{м}}$);
+	\par \redline •	спецоборудование ($\textrm{Р}_{\textrm{с}}$);
+	\par \redline •	машинное время ($\textrm{Р}_{\textrm{мв}}$);
+	\par \redline •	расходы на научные командировки ($\textrm{Р}_{\textrm{нк}}$):
+	\par \redline •	прочие прямые расходы ($\textrm{Р}_{\textrm{пр}}$);
+	\par \redline •	накладные расходы ($\textrm{Р}_{\textrm{нр}}$);
+	\par \redline •	затраты на освоение и сопровождение программного средства($\textrm{Р}_{\textrm{о}}$ и $\textrm{Р}_{\textrm{со}}$).
 	
-	\par \redline Полная себестоимость (Сп) разработки программного продукта (ПП) рассчитывается как сумма расходов по всем статьям с учетом рыночной стоимости аналогичных продуктов.
+	\par \redline Полная себестоимость ($\textrm{С}_{\textrm{п}}$) разработки ПП рассчитывается как сумма расходов по всем статьям с учетом рыночной стоимости аналогичных продуктов.
 	
-	\par \redline Основной статьей расходов на создание ПП является заработная плата разработчиков (исполнителей) , в число которых принято включать инженеров-программистов, руководителей проекта, системных архитекторов, дизайнеров, разработчиков баз данных, Web-мастеров и других специалистов, необходимых для решения специальных задач в команде.
+	\par \redline Основной статьёй расходов на создание программного продукта является заработная плата проекта (основная и дополнительная) разработчиков (исполнителей) ($\textrm{ЗП}_{\textrm{осн}}$ + $\textrm{ЗП}_{\textrm{доп}}$), в число которых принято включать инженеров-программистов, руководителей проекта, системных архитекторов, дизайнеров, разработчиков баз данных, Web-мастеров и  других специалистов, необходимых для решения специальных задач в команде.
 	 
 	\par \redline Расчёт заработной платы разработчиков ПП начинается с определения:
-	\par \redline •	Продолжительности времени разработки Фрв, которое устанавливается экспертным путем с учётом сложности, новизны ПП и фактически затраченного времени. В данном дипломном проекте Фрв = 31 дней.
-	\par \redline •	Количества разработчиков ПП. В данном дипломном проекте один разработчик (инженер-программист 10 разряда).
-	Заработная плата работника будет включать:
-	\par \redline 1. оклад;
-	\par \redline 2. стимулирующие и компенсирующие надбавки и премию, а именно:
-	\par \redline \hspace{15mm} •	надбавка за работу по контракту;
-	\par \redline \hspace{15mm} •	надбавка за характер труда;
-	\par \redline \hspace{15mm} •	премия в размере 5 \% от суммы оклада работника;
-	\par \redline \hspace{15mm} •	надбавка за стаж работы (в \% от базовой ставки);
-	\par \redline \hspace{15mm} •	надбавка за высокие достижения в труде.
-	\par \redline Для расчета месячной заработной платы используем формулу (6.3):
+	\par \redline •	Продолжительности времени разработки ($\textrm{Ф}_{\textrm{рв}}$), которое устанавливается экспертным путем с учётом сложности, новизны ПП и фактически затраченного времени. В данном дипломном проекте $\textrm{Ф}_{\textrm{рв}}$ = 31 день.
+	\par \redline •	Количества разработчиков программного обеспечения. В данном дипломном проекте один разработчик категории инженер-программист разряда 8. Заработная плата разработчиков определятся как сумма основной и дополнительной заработной платы всех исполнителей.
 
-	\begin{equation}
-		\textrm{ЗПмес = Оклад + стимулирующие выплаты + компенсирующие выплаты} 
-	\end{equation}
+	\par \redline Основная заработная плата $\textrm{ЗП}_{\textrm{осн}}$ каждого исполнителя определяется по формуле (\thechaptercntr .\theformulacntr):
+
+	\formulaspace \par \redline 
+	$\textrm{ЗП}_{\textrm{осн}} = \textrm{Т}_{\textrm{ст1р}} \cdot \frac{\textrm{Т}_{\textrm{к}}}{\textrm{Ф}_{\textrm{эфф.р.в.}}} \cdot \textrm{Ф}_{\textrm{рв}} \cdot \textrm{К}_{\textrm{пр}}$ 
+	\hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace 
 	
-	\par \redline Тарифный оклад рассчитывается по формуле (6.4):
+	\par \redline где $\textrm{Т}_{\textrm{ст1р}}$ {--} размер базовой ставки, на текущий момент актуальное значение которой 250 бел.руб.;
+	\par \redline \wherespace $\textrm{Т}_{\textrm{к}}$ {--} тарифный коэффициент согласно разряду исполнителя;
+	\par \redline \wherespace $\textrm{Ф}_{\textrm{эфф.р.в.}}$ {--} среднее количество рабочих дней;
+	\par \redline \wherespace $\textrm{Ф}_{\textrm{рв}}$ {--} фонд рабочего времени исполнителя (продолжительность разработки программного модуля), дни;
+	\par \redline \wherespace $\textrm{К}_{\textrm{пр}}$ {--} коэффициент премии, $\textrm{К}_{\textrm{пр}}$ = 1,4.
+
+	\par \redline Тарифный коэффициент согласно 8 разряда инженера-программиста $\textrm{Т}_{\textrm{к}}$ = 1,57. Продолжительность разработки программного продукта – 70 дней, количество рабочих дней в месяце на текущий год составляет 22 дня. Рассчитаем основную заработную плату инженера-программиста, согласно формуле (\thechaptercntr .\theformulacntr): \addtocounter{formulacntr}{1}
 	
-	\begin{equation}
-		\textrm{Тариф. Оклад = Базовая ставка * тарифный коэффициент,}
-	\end{equation}
+	\formulaspace \par \redline 
+		$\textrm{ЗП}_{\textrm{осн}} \textrm{ = 250} \cdot \frac{\textrm{1,57}}{\textrm{22}} \cdot \textrm{70} \cdot \textrm{1,4 = 1748,41 (бел.руб.)}$ 
+	\formulaspace 
 	
-	\par \redline После того, как мы определим месячную заработную плату специалиста, необходимо пересчитать её на фактическое число дней работы конкретного специалиста над проектом (ПП). В нашем случае фактическое количество дней – 31.
-	\par \redline Поэтому заработную плату каждого исполнителя определяем по формуле (6.5):
+	\par \redline Дополнительная заработная плата $\textrm{ЗП}_{\textrm{доп}}$ каждого исполнителя рассчитывается от основной заработной платы по формуле (\thechaptercntr .\theformulacntr).
 	
-	\begin{equation}
-		\textrm{ЗПспец = Зарплата месячная / 21 * Фрв,}
-	\end{equation}
+	\formulaspace \par \redline 
+		$\textrm{ЗП}_{\textrm{доп}} = \textrm{ЗП}_{\textrm{осн}} \cdot \frac{\textrm{Н}_{\textrm{доп.зп}}}{\textrm{100\%}}$
+	\hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace
 	
-	\par \redline где 21 – среднее количество рабочих дней в месяце; 
-    \par \redline \hspace{7mm}Фрв – фонд рабочего времени исполнителя (дни).
-	\par \redline Рассчитаем заработную плату исполнителей проекта и результаты занесем в таблицу 4.2.
+	\par \redline где $\textrm{Н}_{\textrm{доп.зп}}$ {--} надбавка дополнительной заработной платы, равная 15\%.
+
+	\par \redline Рассчитаем дополнительную заработную плату инженера-программиста, согласно формуле (4.4):
+
+	\par \redline Рассчитаем заработную плату исполнителей проекта и результаты занесем в таблицу (\thechaptercntr .\theformulacntr): \addtocounter{formulacntr}{1}
 	
-	\begin{table}[]
-		\centering
-		\begin{tabular}{|c|c|c|c|c|ccc|}
+	\formulaspace \par \redline 
+		$\textrm{ЗП}_{\textrm{доп}} = \textrm{1748,41} \cdot \frac{\textrm{15\%}}{\textrm{100\%}} \textrm{ = 262,26 (бел.руб.)}$
+	\formulaspace
+
+	\par \redline Результаты вычислений внесём в таблицу \thechaptercntr .\thetablecntr.
+
+	\formulaspace
+	{\begin{Center} 
+		\par Таблица \thechaptercntr .\thetablecntr \spc {--} Расчет заработной платы
+		
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
 		\hline
-		\multirow{2}{*}{Категория работников} &
-		  \begin{sideways} \multirow{2}{*}{Разряд} \end{sideways} &
-		  \multirow{2}{*}{Тарифный коэффициент (Тк)} &
-		  \multirow{2}{*}{Фэфф.р.в.,(дн.)} &
-		  \multirow{2}{*}{Коэффициент премии (Кпр)} &
-		  \multicolumn{3}{c|}{Заработная плата, бел. руб} \\ \cline{6-8} 
-							&   &      &    &     & \multicolumn{1}{c|}{Основная} & \multicolumn{1}{c|}{Дополнительная} & Всего   \\ \hline
-		Инженер-программист & 8 & 1,57 & 70 & 1,4 & \multicolumn{1}{c|}{1748,41}  & \multicolumn{1}{c|}{262,26}         & 2010,70 \\ \hline
-		Итого               & - & -    & -  & -   & \multicolumn{1}{c|}{1748,41}  & \multicolumn{1}{c|}{262,26}         & 2010,70 \\ \hline
-		\end{tabular}
-		\end{table}
+		Категория  & \multirow{2}{*}{Разряд } & \multirow{2}{*}{$\textrm{T}_{\textrm{к}}$} & \multirow{2}{*}{$\textrm{Ф}_{\textrm{эфф.р.в.}}$} & \multirow{2}{*}{$\textrm{К}_{\textrm{пр}}$} & \multicolumn{3}{c|}{Заработная плата, бел.руб.} \\ \cline{6-8}
+  		работников & & & & & Осн. & Доп. & Всего \\ \hline
+		Инженер-   & \multirow{2}{*}{8} & \multirow{2}{*}{1,57} & \multirow{2}{*}{70} & \multirow{2}{*}{1,4} & \multirow{2}{*}{1748,41} & \multirow{2}{*}{262,26} & \multirow{2}{*}{2010,67} \\
+		программист& & & & & & & \\ \hline
+		Итого   & {--} & {--} & {--} & {--} & 1748,41 & 262,26 & 2010,67 \\ \hline
+	\end{tabular} \end{Center}}
+	\formulaspace
 
-	\par 
+	\par \redline Таким образом, как видно из таблицы, заработная плата инженера-программиста составляет 2010,67 бел. руб.
+
+	\par \redline  Отчисления на социальные нужды $\textrm{Р}_{\textrm{соц}}$ определяются по формуле (\thechaptercntr .\theformulacntr) в соответствии с действующим законодательством по нормативу.
+
+	\formulaspace \par \redline 
+		$\textrm{Р}_{\textrm{соц}} = (\textrm{ЗП}_{\textrm{осн}} + \textrm{ЗП}_{\textrm{доп}}) \cdot \frac{35\%}{\textrm{100\%}}$
+	\hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace \addtocounter{formulacntr}{1}
+
+	\par \redline Рассчитанное отчисления на социальные нужды:
+
+	\formulaspace \par \redline 
+		$\textrm{Р}_{\textrm{соц}} = (1748,41 + 262,26) \cdot \frac{35\%}{\textrm{100\%}} \textrm{ = 703,73 (бел.руб.).}$
+	\formulaspace 
+
+	\par \redline Расходы на материалы и комплектующие $\textrm{Р}_{\textrm{м}}$ отражают расходы на магнитные носители, бумагу, красящие ленты и другие материалы, необходимые для разработки программного продукта. Норма расхода материалов в суммарном выражении определяется в процентах к основной заработной плате (\thechaptercntr .\theformulacntr).
+
+	\formulaspace \par \redline 
+		$\textrm{Р}_{\textrm{м}} = \textrm{ЗП}_{\textrm{осн}} \cdot \frac{\textrm{Н}_{\textrm{мз}}}{\textrm{100\%}}$
+	\hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace \addtocounter{formulacntr}{1}
+
+	\par \redline где $\textrm{Н}_{\textrm{мз}}$ {--} норма расхода материалов от основной заработной платы, в процентах.
+
+	\par \redline Рассчитаем расходы на материалы и комплектующий, приняв $\textrm{Н}_{\textrm{мз}}$ равным 4\%:
+
+	\formulaspace \par \redline 
+		$\textrm{Р}_{\textrm{м}} = 1748,41 \cdot \frac{\textrm{4\%}}{\textrm{100\%}} \textrm{ = 69,94 (бел.руб.)}$ 
+	\formulaspace 
+
+	\par \redline Расходы на спецоборудование $\textrm{Р}_{\textrm{c}}$ включают затраты на приобретение технических и программных средств специального назначения, необходимых для разработки методического пособия, включая расходы на проектирование, изготовление, отладку и другое.
+	
+	\par \redline В данном дипломном проекте для разработки нейронной сети приобретение како- го-либо спецоборудования не предусматривалось. Так как спецоборудование не было приобретено, расходы равны нулю.
+
+	\par \redline Расходы на машинное время $\textrm{Р}_{\textrm{мв}}$ включают оплату машинного времени, необходимого для разработки и отладки программного продукта. Они определяются в машино-часах по нормативам на 100 строк исходного кода машинного времени. $\textrm{Р}_{\textrm{мв}}$ определяется по формуле (\thechaptercntr .\theformulacntr).
+
+	\formulaspace \par \redline 
+		$\textrm{Р}_{\textrm{мвi}} = \textrm{Ц}_{\textrm{мi}} \cdot \frac{\textrm{V}_{\textrm{0}}}{\textrm{100}} \cdot \textrm{Н}_{\textrm{мв}}$
+	\hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace \addtocounter{formulacntr}{1}
+ 
+	\par \redline где $\textrm{Ц}_{\textrm{мi}}$ {--} цена одного машинного часа (7 бел. руб.);
+	\par \redline \wherespace $\textrm{V}_{\textrm{0}}$ {--} уточнённый общий объём машинного кода;
+	\par \redline \wherespace $\textrm{Н}_{\textrm{мв}}$ {--} норматив расхода машинного времени на отладку 100 строк кода в маши- но-часах. Принимается в размере 0,7.
+
+	\par \redline Рассчитаем расходы на машинное время:
+
+	\formulaspace \par \redline 
+		$\textrm{Р}_{\textrm{мвi}} = 0,7 \cdot \frac{6430}{100} \cdot \textrm{0,6 = 270,06 (бел. руб.)}$
+	\formulaspace
+
+	\par \redline Расходы по статье <<Научные командировки>> $\textrm{Р}_{\textrm{нк}}$ берутся либо по смете научных командировок, разрабатываемой на предприятии, либо в процентах от основной заработной платы исполнителей (10-15\%). Так как в данном проекте научные командировки не предусмотрены, данная статься не рассчитывается. 
+
+	\par \redline Прочие затраты $\textrm{Р}_{\textrm{пр}}$ включают затраты на приобретение специальной научно-тех- нической информации и специальной литературы. Определяются по нормативу в процентах к основной заработной плате исполнителей. Так как специальная научно-техническая информация и специальная литература не приобреталась, то данная статья не рассчитывается. 
+
+	\par \redline Затраты на накладные расходы $\textrm{Р}_{\textrm{нр}}$ связаны с содержанием вспомогательных хозяйств, опытных производств, а также с расходами на общехозяйственные нужды. Определяется по нормативу в процентах к основной заработной плате по формуле (\thechaptercntr .\theformulacntr).
+
+	\formulaspace \par \redline 
+		$\textrm{Р}_{\textrm{нр}} = \frac{\textrm{Н}_{\textrm{нр}}}{\textrm{100\%}} \cdot \textrm{ЗП}_{\textrm{осн}}$
+	\hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace 
+
+	\par \redline где $\textrm{Н}_{\textrm{нр}}$ {--} норматив накладных расходов.
+	
+	\par \redline В данном дипломном проекте норматив накладных расходов равен 50\%, поэтому затраты на накладные расходы согласно формуле (\thechaptercntr .\theformulacntr) равны: \addtocounter{formulacntr}{1}
+
+	\formulaspace \par \redline 
+		$\textrm{Р}_{\textrm{нр}} = \frac{\textrm{75\%}}{\textrm{100\%}} \cdot \textrm{1748,63 = 1311,31 (бел.руб.).}$
+	\formulaspace
+
+	\par \redline Сумма вышеперечисленных расходов по статьям на программный продукт служит исходной базой для расчёта затрат на освоение и сопровождение программного продукта. Они рассчитываются по формуле (\thechaptercntr .\theformulacntr):
+
+	\formulaspace \par \redline 
+		$\textrm{СЗ = } \textrm{ЗП}_{\textrm{осн}} + \textrm{ЗП}_{\textrm{доп}} + \textrm{Р}_{\textrm{соц}} + \textrm{Р}_{\textrm{м}} + \textrm{Р}_{\textrm{с}} + \textrm{Р}_{\textrm{мв}} + \textrm{Р}_{\textrm{нк}} + \textrm{Р}_{\textrm{пр}} + \textrm{Р}_{\textrm{нр}}$
+	\hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace \addtocounter{formulacntr}{1}
+
+	\par \redline тогда
+
+	\formulaspace \par \redline 
+		$\textrm{СЗ = 1748,41 + 262,26 + 703,73 + 69,94 + 270,06 + 1311,31 = 4365,71 (бел.руб.).}$
+	\formulaspace 
+
+	\par \redline Организация-разработчик участвует в освоении программного продукта и несёт соответствующие затраты, на которые составляется смета, оплачиваемая заказчиком по договору. Затраты на освоение $\textrm{Р}_{\textrm{о}}$ определяются по установленному нормативу от суммы затрат по формуле (\thechaptercntr .\theformulacntr).
+
+	\formulaspace \par \redline 
+		$\textrm{Р}_{\textrm{о}} = \textrm{СЗ} \cdot \frac{\textrm{Н}_{\textrm{о}}}{\textrm{100\%}}$
+	\hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace \addtocounter{formulacntr}{1}
+
+	\par \redline где $\textrm{СЗ}$ {--} сумма вышеперечисленных расходов по статьям на разработку программного продукта; 
+	\par \redline \wherespace $\textrm{Н}_{\textrm{о}}$ {--} установленный норматив затрат на освоение. Для данного дипломного проекта принимается равным 8\%.
+
+	\par \redline Рассчитаем затраты на освоение продукта:
+
+	\formulaspace \par \redline 
+		$\textrm{Р}_{\textrm{о}} = 4365,71 \cdot \frac{\textrm{8\%}}{\textrm{100\%}} \textrm{ = 349,26 (бел.руб.)}$
+    \formulaspace 
+
+	\par \redline Организация-разработчик осуществляет сопровождение программного продукта и несёт расходы, которые оплачиваются заказчиком в соответствии с договором и сметой на сопровождение. Расходы на сопровождение $\textrm{Р}_{\textrm{со}}$ рассчитываются по формуле (\thechaptercntr .\theformulacntr).
+
+	\formulaspace \par \redline 
+		$\textrm{Р}_{\textrm{со}} = \textrm{СЗ} \cdot \frac{\textrm{Н}_{\textrm{со}}}{\textrm{100\%}}$
+	\hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace \addtocounter{formulacntr}{1}
+
+	\par \redline где $\textrm{Н}_{\textrm{со}}$ {--} установленный норматив затрат на сопровождение программного продукта. Для данного дипломного проекта принимается равным 7\%. 
+
+	\par \redline Рассчитаем расходы на сопровождение:
+
+	\formulaspace \par \redline 
+		$\textrm{Р}_{\textrm{о}} = 4365,71 \cdot \frac{\textrm{7\%}}{\textrm{100\%}} \textrm{ = 305,60 (бел.руб.)}$
+	\formulaspace 
+
+	\par \redline Полная себестоимость (СП) разработки программного продукта рассчитывается как сумма расходов по всем статьям. Она определяется по формуле (\thechaptercntr .\theformulacntr).
+	
+	\formulaspace \par \redline 
+		$\textrm{СП} = \textrm{СЗ} + \textrm{Р}_{\textrm{о}} + \textrm{Р}_{\textrm{со}}$
+	\hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace \addtocounter{formulacntr}{1}
+
+	\par \redline Рассчитанная полная себестоимость продукта:
+
+	\formulaspace \par \redline 
+		$\textrm{СП = 4365,71 + 349,26 + 305,60 = 5020,27 (бел.руб.)}$
+	\hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace 
+
+	\par \redline Результаты вычислений занесём в таблицу \thechaptercntr .\thetablecntr.
+
+	\formulaspace
+	\begin{flushleft}
+		\par \centering Таблица \thechaptercntr .\thetablecntr \spc {--} Себестоимость программного продукта
+	\end{flushleft}
+	{\begin{Center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Наименование статей затрат & Норматив, \% & Сумма затрат, бел.руб. \\ \hline
+		Заработная плата, всего & {--} & 2010,67 \\ \hline
+		Основная заработная плата & {--} & 1748,41 \\ \hline
+		Дополнительная заработная плата & {--} & 262,26 \\ \hline
+		Отчисления на социальные нужды & 35 & 703,73 \\ \hline
+		Спецоборудование & Не применялось & {--} \\ \hline
+		Материалы и комплектующие изделия & 4 & 69,94 \\ \hline
+		Машинное время & {--} & 270,06 \\ \hline
+		Научные командировки & Не планировались & {--} \\ \hline
+		Прочие затраты & Не применялись & {--} \\ \hline
+		Накладные расходы & 75 & 1311,31 \\ \hline
+		Сумма затрат & {--} & 4365,71 \\ \hline
+		Затраты на освоение & 8 & 349,26 \\ \hline
+		Затраты на сопровождение & 7 & 305,60 \\ \hline
+		Полная себестоимость & {--} & 5020,57 \\ \hline
+	\end{tabular} \addtocounter{tablecntr}{1}
+	\end{Center}}
+	\formulaspace 
+	
+	\par \redline В результате всех расчётов полная себестоимость программного продукта составила 5020,57 бел.руб. 
 }
+
+
+\subtitlespace
+
+\subsection*{ 
+	\gostTitleFont
+	\redline
+	\thechaptercntr .\thesubchaptercntr \spc
+	Расчет цены и прибыли по программному продукту
+} \addtocounter{subchaptercntr}{1}
+
+\subtitlespace
+
+{\gostFont
+
+	\par \redline Для определения цены программного продукта необходимо рассчитать плановую прибыль П, которая рассчитывается по формуле (\thechaptercntr .\theformulacntr). 
+
+	\formulaspace \par \redline 
+		$\textrm{П} = \textrm{СП} \cdot \frac{\textrm{R}}{\textrm{100\%}}$
+	\hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace \addtocounter{formulacntr}{1}
+
+	\par \redline где $\textrm{СП}$ {--} полная себестоимость программного модуля, бел. руб; 
+	\par \redline \wherespace $\textrm{R}$ {--} уровень рентабельности программного модуля.
+
+	\par \redline Рассчитаем прибыль от реализации:
+
+	\formulaspace \par \redline 
+		$\textrm{П = 5020,57} \cdot \frac{\textrm{23\%}}{\textrm{100\%}} \textrm{ = 1154,73 (бел.руб)}$
+	\formulaspace
+
+	\par \redline После расчета прибыли от реализации по формуле (\thechaptercntr .\theformulacntr) определяется прогнозируемая цена программного продукта без налогов $\textrm{Ц}_{\textrm{п}}$.
+
+	\formulaspace \par \redline 
+		$\textrm{Ц}_{\textrm{п}} = \textrm{СП} + \textrm{П}$
+	\hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace \addtocounter{formulacntr}{1}
+
+	\par \redline Рассчитаем цену программного продукта без налогов:
+
+	\formulaspace \par \redline 
+		$\textrm{Ц}_{\textrm{п}} = \textrm{5020,57 + 1154,74 = 6175,3 (бел.руб.)}$
+	\formulaspace
+
+	\par \redline Отпускная цена $\textrm{Ц}_{\textrm{о}}$ (цена реализации) программного продукта включает налог на добавленную стоимость и рассчитывается по формуле (\thechaptercntr .\theformulacntr).
+
+	\formulaspace \par \redline 
+		$\textrm{Ц}_{\textrm{о}} = \textrm{СП} + \textrm{П} + \textrm{НДС}_{\textrm{пп}}$
+	\hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace \addtocounter{formulacntr}{1}
+
+	\par \redline где $\textrm{НДС}_{\textrm{пп}}$ {--} налог на добавленную стоимость для программного продукта.
+
+	\par \redline Для данного программного продукта $\textrm{НДС}_{\textrm{пп}}$ рассчитывается по формуле (\thechaptercntr .\theformulacntr).
+
+	\formulaspace \par \redline 
+		$\textrm{НДС}_{\textrm{пп}} = \textrm{Ц}_{\textrm{п}} + \frac{\textrm{НДС}}{\textrm{100\%}}$
+	\hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace \addtocounter{formulacntr}{1}
+
+	\par \redline где $\textrm{НДС}$ {--} налог на добавленную стоимость. В настоящее время он составляет 20\%.
+
+	\par \redline Рассчитаем $\textrm{НДС}_{\textrm{пп}}$:
+
+	\formulaspace \par \redline 
+		$\textrm{НДС}_{\textrm{пп}} = \textrm{6175,30} + \frac{\textrm{20\%}}{\textrm{100\%}} \textrm{ = 1235,06 (бел.руб.)}$
+	\formulaspace
+
+	\par \redline Рассчитаем $\textrm{НДС}_{\textrm{пп}}$:
+
+	\formulaspace \par \redline 
+		$\textrm{Ц}_{\textrm{о}} = \textrm{5020,57 + 1154,73 + 1235,06 = 7410,36 (бел.руб.)}$
+	\formulaspace
+
+	\par \redline Прибыль от реализации программного продукта за вычетом налога на прибыль является чистой прибылью. Чистая прибыль остаётся организации-разработчику и представляет собой экономический эффект от создания нового программного продукта. Она рассчитывается по формуле (\thechaptercntr .\theformulacntr).
+
+	\formulaspace \par \redline 
+		$\textrm{ПЧ} = \textrm{П} \cdot + (\textrm{1} - \frac{\textrm{Н}_{\textrm{п}}}{\textrm{100\%}})$
+	\hfill (\thechaptercntr .\theformulacntr) \redline
+	\formulaspace \addtocounter{formulacntr}{1}
+
+	\par \redline где $\textrm{Н}_{\textrm{п}}$ {--} ставка налога на прибыль. В настоящее время он равен 20\%.
+
+	\par \redline Рассчитаем чистую прибыль:
+	
+	\formulaspace \par \redline 
+		$\textrm{ПЧ} = 1154,73 \cdot + (\textrm{1} - \frac{\textrm{20\%}_{\textrm{п}}}{\textrm{100\%}} \textrm{ = 923,78 {бел.руб.}})$
+	\formulaspace
+
+	\par \redline Результаты расчётов цены и прибыли по программному продукту сведены в таблицу \thechaptercntr .\thetablecntr.
+
+	\formulaspace
+	\begin{flushleft}
+		\par \centering Таблица \thechaptercntr .\thetablecntr \spc {--} Себестоимость программного продукта
+	\end{flushleft}
+	{\begin{Center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Наименование статей затрат & Норматив, \% & Сумма затрат, бел.руб. \\ \hline
+		Полная себестоимость & {--} & 5020,57 \\ \hline
+		Прибыль & 20 & 1154,73 \\ \hline
+		Цена без НДС & {--} & 6175,30 \\ \hline
+		НДС & 20 & 1235,06 \\ \hline
+		Отпускная цена & {--} & 7410,36 \\ \hline
+		Налог на прибыль & 20 & 230,95 \\ \hline
+		Чистая прибыль & {--} & 923,78 \\ \hline
+	\end{tabular} \addtocounter{tablecntr}{1}
+	\end{Center}}
+	\formulaspace
+
+	\par \redline В ходе произведенных расчетов определены основные экономические показатели: полная себестоимость – 5020,57 бел.руб.; прогнозируемая цена – 7410,36 бел. руб.; чистая прибыль – 923,78 бел.руб. 
+
+	\par \redline Разработанный программный продукт не имеет конкурентов, предлагающих свои решения по более низким ценам. Несмотря на сравнительно низкую стоимость разрабатываемой нейронной сети, её функциональность и качество остаются на высоком уровне. Стоимость системы, разработанной в ходе дипломного проектирования, является приемлемой для основных потребителей, в лице промышленных предприятий. Основным плюсом для преобретателя нейронной сети является, возможность интеграции нейронной сети в иные системы, а так же невысокие системные требрывния предъявляемые к машине, на которой запускается система. Таким образом, рассчитанная отпускная цена на веб-приложение, разрабатываемое в рамках данного дипломного проекта, составляет 7410,36 белорусских рубля и является конкурентоспособной. При расчете цены учтены отчисления в фонд социальной защиты, а также налоги, необходимые к уплате.
+
+}
+
+\setcounter{subchaptercntr}{1}
+\setcounter{formulacntr}{1}
+\setcounter{imagecntr}{1}

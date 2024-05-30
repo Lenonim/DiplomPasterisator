@@ -39,6 +39,10 @@
 
 \usepackage{stackengine} 
 
+\usepackage{tabularray}
+
+\usepackage{nicematrix}
+
 % настройка шрифтов и языков
     \usepackage[english, russian]{babel} % для работы с английским и русским языками
     \usepackage[T2A]{fontenc} % для норм паказа символов в pdf
@@ -72,11 +76,17 @@
     \newcommand\gostRamkaFont{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont}
     \parskip=0pt % чтобы между абзацами было расстояние равное межстрочному интервалу
 
+    \newcommand\FNine{\fontsize{9pt}{10.8pt}\selectfont} 
+    \newcommand\FTen{\fontsize{10pt}{12.0pt}\selectfont} 
+    \newcommand\FEleven{\fontsize{11pt}{13.2pt}\selectfont} 
+    \newcommand\FTwelwe{\fontsize{12pt}{14.4pt}\selectfont} 
+
+
 % Рисует рамку
     \usepackage{xltxtra}
 
     \textheight=260mm
-    \textwidth=175mm
+    \textwidth=174mm
     \unitlength=1mm
     
     \oddsidemargin=-0.5mm
