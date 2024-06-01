@@ -146,11 +146,13 @@
 	\hfill (\thechaptercntr .\theformulacntr) \redline
 	\formulaspace 
 	
-	\par \redline где $\textrm{Т}_{\textrm{ст1р}}$ {--} размер базовой ставки, на текущий момент актуальное значение которой 250 бел.руб.;
-	\par \redline \wherespace $\textrm{Т}_{\textrm{к}}$ {--} тарифный коэффициент согласно разряду исполнителя;
-	\par \redline \wherespace $\textrm{Ф}_{\textrm{эфф.р.в.}}$ {--} среднее количество рабочих дней;
-	\par \redline \wherespace $\textrm{Ф}_{\textrm{рв}}$ {--} фонд рабочего времени исполнителя (продолжительность разработки программного модуля), дни;
-	\par \redline \wherespace $\textrm{К}_{\textrm{пр}}$ {--} коэффициент премии, $\textrm{К}_{\textrm{пр}}$ = 1,4.
+	\begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
+		& где  & $\textrm{Т}_{\textrm{ст1р}}$ {--} размер базовой ставки, на текущий момент актуальное значение которой 250 бел.руб.; \\
+		& 	   & $\textrm{Т}_{\textrm{к}}$ {--} тарифный коэффициент согласно разряду исполнителя; \\
+		&	   & $\textrm{Ф}_{\textrm{эфф.р.в.}}$ {--} среднее количество рабочих дней; \\
+		&	   & $\textrm{Ф}_{\textrm{рв}}$ {--} фонд рабочего времени исполнителя (продолжительность разработки программного модуля), дни; \\
+		&	   & $\textrm{К}_{\textrm{пр}}$ {--} коэффициент премии, $\textrm{К}_{\textrm{пр}}$ = 1,4. \\
+    \end{tabular}
 
 	\par \redline Тарифный коэффициент согласно 8 разряда инженера-программиста $\textrm{Т}_{\textrm{к}}$ = 1,57. Продолжительность разработки программного продукта – 70 дней, количество рабочих дней в месяце на текущий год составляет 22 дня. Рассчитаем основную заработную плату инженера-программиста, согласно формуле (\thechaptercntr .\theformulacntr): \addtocounter{formulacntr}{1}
 	
@@ -203,7 +205,7 @@
 	\par \redline Рассчитанное отчисления на социальные нужды:
 
 	\formulaspace \par \redline 
-		$\textrm{Р}_{\textrm{соц}} = (1748,41 + 262,26) \cdot \frac{\textrm{\FTwelwe 35\%}}{\textrm{\FTwelwe 100\%}} \textrm{ = 703,73 (бел.руб.).}$
+		$\textrm{Р}_{\textrm{соц}} = \textrm{(1748,41 + 262,26)} \cdot \frac{\textrm{\FTwelwe 35\%}}{\textrm{\FTwelwe 100\%}} \textrm{ = 703,73 (бел.руб.).}$
 	\formulaspace 
 
 	\par \redline Расходы на материалы и комплектующие $\textrm{Р}_{\textrm{м}}$ отражают расходы на магнитные носители, бумагу, красящие ленты и другие материалы, необходимые для разработки программного продукта. Норма расхода материалов в суммарном выражении определяется в процентах к основной заработной плате (\thechaptercntr .\theformulacntr).
@@ -218,7 +220,7 @@
 	\par \redline Рассчитаем расходы на материалы и комплектующий, приняв $\textrm{Н}_{\textrm{мз}}$ равным 4\%:
 
 	\formulaspace \par \redline 
-		$\textrm{Р}_{\textrm{м}} = 1748,41 \cdot \frac{\textrm{\FTwelwe 4\%}}{\textrm{\FTwelwe 100\%}} \textrm{ = 69,94 (бел.руб.)}$ 
+		$\textrm{Р}_{\textrm{м}} = \textrm{1748,41} \cdot \frac{\textrm{\FTwelwe 4\%}}{\textrm{\FTwelwe 100\%}} \textrm{ = 69,94 (бел.руб.)}$ 
 	\formulaspace 
 
 	\par \redline Расходы на спецоборудование $\textrm{Р}_{\textrm{c}}$ включают затраты на приобретение технических и программных средств специального назначения, необходимых для разработки методического пособия, включая расходы на проектирование, изготовление, отладку и другое.
@@ -232,6 +234,12 @@
 	\hfill (\thechaptercntr .\theformulacntr) \redline
 	\formulaspace \addtocounter{formulacntr}{1}
  
+	\begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
+		& где  & $\textrm{Ц}_{\textrm{мi}}$ {--} цена одного машинного часа (7 бел. руб.); \\
+		& 	   & $\textrm{V}_{\textrm{0}}$ {--} уточнённый общий объём машинного кода; \\
+		&	   & $\textrm{Н}_{\textrm{мв}}$ {--} норматив расхода машинного времени на отладку 100 строк кода в маши- но-часах. Принимается в размере 0,7. \\
+    \end{tabular}
+	
 	\par \redline где $\textrm{Ц}_{\textrm{мi}}$ {--} цена одного машинного часа (7 бел. руб.);
 	\par \redline \wherespace $\textrm{V}_{\textrm{0}}$ {--} уточнённый общий объём машинного кода;
 	\par \redline \wherespace $\textrm{Н}_{\textrm{мв}}$ {--} норматив расхода машинного времени на отладку 100 строк кода в маши- но-часах. Принимается в размере 0,7.
@@ -239,7 +247,7 @@
 	\par \redline Рассчитаем расходы на машинное время:
 
 	\formulaspace \par \redline 
-		$\textrm{Р}_{\textrm{мвi}} = 0,7 \cdot \frac{\textrm{\FTwelwe 6430}}{\textrm{\FTwelwe 100}} \cdot \textrm{0,6 = 270,06 (бел. руб.)}$
+		$\textrm{Р}_{\textrm{мвi}} = \textrm{0,7} \cdot \frac{\textrm{\FTwelwe 6430}}{\textrm{\FTwelwe 100}} \cdot \textrm{0,6 = 270,06 (бел. руб.)}$
 	\formulaspace
 
 	\par \redline Расходы по статье <<Научные командировки>> $\textrm{Р}_{\textrm{нк}}$ берутся либо по смете научных командировок, разрабатываемой на предприятии, либо в процентах от основной заработной платы исполнителей (10-15\%). Так как в данном проекте научные командировки не предусмотрены, данная статься не рассчитывается. 
@@ -249,7 +257,7 @@
 	\par \redline Затраты на накладные расходы $\textrm{Р}_{\textrm{нр}}$ связаны с содержанием вспомогательных хозяйств, опытных производств, а также с расходами на общехозяйственные нужды. Определяется по нормативу в процентах к основной заработной плате по формуле (\thechaptercntr .\theformulacntr).
 
 	\formulaspace \par \redline 
-		$\textrm{Р}_{\textrm{нр}} = \frac{\textrm{Н}_{\textrm{\FNine нр}}}{\textrm{100\%}} \cdot \textrm{ЗП}_{\textrm{осн}}$
+		$\textrm{Р}_{\textrm{нр}} = \frac{\textrm{\FTwelwe Н}_{\textrm{\FNine нр}}}{\textrm{\FTwelwe 100\%}} \cdot \textrm{ЗП}_{\textrm{осн}}$
 	\hfill (\thechaptercntr .\theformulacntr) \redline
 	\formulaspace 
 
@@ -287,7 +295,7 @@
 	\par \redline Рассчитаем затраты на освоение продукта:
 
 	\formulaspace \par \redline 
-		$\textrm{Р}_{\textrm{о}} = 4365,71 \cdot \frac{\textrm{\FTwelwe 8\%}}{\textrm{\FTwelwe 100\%}} \textrm{ = 349,26 (бел.руб.)}$
+		$\textrm{Р}_{\textrm{о}} = \textrm{4365,71} \cdot \frac{\textrm{\FTwelwe 8\%}}{\textrm{\FTwelwe 100\%}} \textrm{ = 349,26 (бел.руб.)}$
     \formulaspace 
 
 	\par \redline Организация-разработчик осуществляет сопровождение программного продукта и несёт расходы, которые оплачиваются заказчиком в соответствии с договором и сметой на сопровождение. Расходы на сопровождение $\textrm{Р}_{\textrm{со}}$ рассчитываются по формуле (\thechaptercntr .\theformulacntr).
@@ -302,7 +310,7 @@
 	\par \redline Рассчитаем расходы на сопровождение:
 
 	\formulaspace \par \redline 
-		$\textrm{Р}_{\textrm{о}} = 4365,71 \cdot \frac{\textrm{\FTwelwe 7\%}}{\textrm{\FTwelwe 100\%}} \textrm{ = 305,60 (бел.руб.)}$
+		$\textrm{Р}_{\textrm{со}} = \textrm{4365,71} \cdot \frac{\textrm{\FTwelwe 7\%}}{\textrm{\FTwelwe 100\%}} \textrm{ = 305,60 (бел.руб.)}$
 	\formulaspace 
 
 	\par \redline Полная себестоимость (СП) разработки программного продукта рассчитывается как сумма расходов по всем статьям. Она определяется по формуле (\thechaptercntr .\theformulacntr).
@@ -316,7 +324,6 @@
 
 	\formulaspace \par \redline 
 		$\textrm{СП = 4365,71 + 349,26 + 305,60 = 5020,27 (бел.руб.)}$
-	\hfill (\thechaptercntr .\theformulacntr) \redline
 	\formulaspace 
 
 	\par \redline Результаты вычислений занесём в таблицу \thechaptercntr .\thetablecntr.
@@ -433,7 +440,7 @@
 	\par \redline Рассчитаем чистую прибыль:
 	
 	\formulaspace \par \redline 
-		$\textrm{ПЧ} = 1154,73 \cdot (\textrm{1} - \frac{\textrm{\FTwelwe 20\%}}{\textrm{\FTwelwe 100\%}}) \textrm{ = 923,78 {бел.руб.}}$
+		$\textrm{ПЧ} = \textrm{1154,73} \cdot (\textrm{1} - \frac{\textrm{\FTwelwe 20\%}}{\textrm{\FTwelwe 100\%}}) \textrm{ = 923,78 {бел.руб.}}$
 	\formulaspace
 
 	\par \redline Результаты расчётов цены и прибыли по программному продукту сведены в таблицу \thechaptercntr .\thetablecntr.
