@@ -1,0 +1,27 @@
+\documentclass[landscape]{scrartcl}
+
+\usepackage{geometry}
+ \geometry{
+    a1paper,
+    left=40mm,
+    right=40mm,
+    top=0pt,
+    bottom=0pt
+}
+
+\pagestyle {empty}
+
+\usepackage{graphicx, epsfig}
+\usepackage[inkscapeformat=png]{svg}
+\usepackage{rotating} 
+\usepackage{caption}
+\usepackage{float} 
+
+\begin{document}
+  \begin{figure}[H]
+    \centering
+    \def\svgwidth{\textwidth}
+    \includegraphics[width=\textwidth]{LSTM.png}
+    \label{fig:PUS}
+  \end{figure} 
+\end{document}
