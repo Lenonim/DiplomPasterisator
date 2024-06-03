@@ -67,7 +67,7 @@
     \def\svgwidth{\textwidth}
     \includegraphics[scale=0.6]{images/data_1_visual.jpg}
     \caption*{\gostFont Рисунок \thechaptercntr .\theimagecntr \spc {--} Визуализация данный 1-ого файла.}
-    \label{fig:NNBlackBox}
+    \label{fig:Data1Visual}
   \end{sidewaysfigure} \addtocounter{imagecntr}{1}
 
   \begin{sidewaysfigure}
@@ -75,7 +75,7 @@
     \def\svgwidth{\textwidth}
     \includegraphics[scale=0.6]{images/data_2_visual.jpg}
     \caption*{\gostFont Рисунок \thechaptercntr .\theimagecntr \spc {--} Визуализация данный 2-ого файла с растянутым масштабом по оси абсцисс.}
-    \label{fig:NNBlackBox}
+    \label{fig:Data2Visual}
   \end{sidewaysfigure} \addtocounter{imagecntr}{1}
 
   \begin{sidewaysfigure}
@@ -83,8 +83,7 @@
     \def\svgwidth{\textwidth}
     \includegraphics[scale=0.6]{images/data_3_visual.jpg}
     \caption*{\gostFont Рисунок \thechaptercntr .\theimagecntr \spc {--} Визуализация данный 3-ого файла с cуженным масштабом по оси абсцисс.}
-    \label{fig:NNBlackBox}
-
+    \label{fig:Data3Visual}
   \end{sidewaysfigure} \addtocounter{imagecntr}{1}
 
   \begin{sidewaysfigure}
@@ -92,7 +91,7 @@
     \def\svgwidth{\textwidth}
     \includegraphics[scale=0.5]{images/data_1_anomaly.png}
     \caption*{\gostFont Рисунок \thechaptercntr .\theimagecntr \spc {--} Визуализация данный 1-ого файла с примерами нестандартного поведения системы.}
-    \label{fig:NNBlackBox}
+    \label{fig:Data1VisualAnomaly}
   \end{sidewaysfigure} \addtocounter{imagecntr}{1}
 
   \par \redline Сравнивая данные на рисунках 3.2, 3.3 и 3.4, хотелось бы пояснить, что данные остальных файлов очень схожи с данными на представленных рисунках. Однако, как можно увидеть на рисунке 3.5, данные могут содержать непохожее на другие участки поведение. Такое будет называться аномалией. При этом такие аномалии встречаются только в первом .scv файле, поскольку схожее поведение пастеризационной установки средствами визуализации в других файлах выявлено не было. Это значит, что мы имеем большинство данных без аномалий, но также имеем и примеры данных с аномалиями. 
@@ -148,7 +147,7 @@
   \par \redline Учитывая особенности вида данных, которые поступают на предиктовый детектор системы Kaspersky MLAD, а также ввиду того, что данная модель будет работать в режиме реального времени и данные будут поступать через некоторый промежуток времени, то необходимо сделать так, чтобы начальные данные также были равноудалены друг от друга относительно оси времени. Однако, взаимное удаление точек по оси времени в начальных данных не постоянно. Эти диапазоны необходимо выровнять, чтобы повысить схожесть реальных входов и входов при обучении модели. Другими словами, необходимо преобразовать начальный данные в такие данные, в которых каждое значение времени представляло собой арифметическую прогрессию. Вышесказанное описывает формула (\thechaptercntr .\theformulacntr):
 
 	\formulaspace \par \redline 
-    $t_i = t_0 + i \times r$
+    $t_i = t_0 + i \cdot r$
 	  \hfill (\thechaptercntr .\theformulacntr) \redline
 	\formulaspace \addtocounter{formulacntr}{1}
 
@@ -175,7 +174,7 @@
   \par \redline Для определение ординаты для i-того элемента прогрессии необходимо взять две ближайших точки из реальных данных относительно оси абсцисс к искомой точке. Тогда для определения ординаты имеем формулу (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
-    $y = \left(\scaleto{\frac{\left(x - x_1\right) \times \left(y_2 - y_1\right)}{x_2 - x_1}}{24pt}\right) + y_1$
+    $y = \left(\scaleto{\frac{\left(x - x_1\right) \cdot \left(y_2 - y_1\right)}{x_2 - x_1}}{24pt}\right) + y_1$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
@@ -200,14 +199,14 @@
   \par \redline Данная задача выглядит следующим образом: пусть есть $y \in \left[a; b\right]$, а необходимо преобразовать $y$ в эквивалентное значение $z \in \left[c; d\right]$. Тогда для операции скейлинга имеем формулу (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
-    $z = \frac{\left(y - a\right) \times \left(b - a\right)}{d - c} + c$
+    $z = \scaleto{\frac{\left(y - a\right) \cdot \left(b - a\right)}{d - c}}{22pt} + c$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \par \redline А для того, чтобы восстановить эти значения, т.е. провести операцию обратного скейлинга, необходимо использовать формулу (\thechaptercntr .\theformulacntr): 
 
   \formulaspace \par \redline 
-    $y = \frac{\left(z - c\right) \times \left(d - c\right)}{b - a} + a$
+    $y = \scaleto{\frac{\left(z - c\right) \cdot \left(d - c\right)}{b - a}}{22pt} + a$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
