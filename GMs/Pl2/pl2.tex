@@ -1,12 +1,12 @@
-\documentclass[landscape]{scrartcl}
+\documentclass[]{scrartcl}
 
 \usepackage{geometry}
  \geometry{
     a1paper,
     left=40mm,
     right=40mm,
-    top=0pt,
-    bottom=0pt
+    top=40mm,
+    bottom=40mm
 }
 
 \pagestyle {empty}
@@ -18,10 +18,10 @@
 \usepackage{float} 
 
 \begin{document}
-  \begin{figure}[H]
+  \begin{sidewaysfigure}
     \centering
     \def\svgwidth{\textwidth}
-    \includegraphics[width=\textwidth]{LSTM.png}
+    \includegraphics[width=\textheight]{LSTM.png}
     \label{fig:PUS}
-  \end{figure} 
+  \end{sidewaysfigure} 
 \end{document}
