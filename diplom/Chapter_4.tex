@@ -23,15 +23,15 @@
 
 {\gostFont
 
-  \par \redline Для выбора архитектуры нейронной сети необходимо для начала понять, какие архитектуры используются для прогнозирования данных временных рядов. Зачастую для выполнения данной задачи используются однослойные персептроны, многослойные персептроны и реккурентные нейронные сети. Обращая внимание на свойства данных, становится понятно, что однослойный персептрон не сможет обеспечить необходимую обобщающую способность. Тогда остаётся выбор между многослойным перспетроном и реккурентной нейронной сетью. 
+  \par \redline Для выбора архитектуры нейронной сети необходимо для начала понять, какие архитектуры используются для прогнозирования данных временных рядов. Зачастую для выполнения данной задачи используются однослойные персептроны, многослойные персептроны и рекуррентные нейронные сети. Обращая внимание на свойства данных, становится понятно, что однослойный персептрон не сможет обеспечить необходимую обобщающую способность. Тогда остаётся выбор между многослойным персептроном и рекуррентной нейронной сетью. 
   
   \par \redline Относительно многослойных персептронов существует теорема, согласно которой персептрон с одним скрытым слоем является универсальным аппроксиматором, т. е. он способен с любой степенью точности аппроксимировать любую непрерывную функцию, если в качестве функции активации нейронных элементов скрытого слоя используется непрерывная, монотонно возрастающая, ограниченная функция. При этом точность аппроксимации функции зависит от количества нейронов в скрытом слое. Чем больше количество нейронов, тем больше точность аппроксимации. Однако при слишком большой размерности скрытого слоя может наступить явление, которое называется перетренировкой сети, когда сеть имеет плохую обобщающую способность.  
 
   \par \redline Что касается RNN, также существует теорема, говорящая нам о том, что любая нелинейная динамическая система при использовании достаточного количества сигмоидальных нейронных элементов в скрытом слое с любой точностью может быть аппроксимирована рекуррентной нейронной сетью. 
 
-  \par \redline Выходит, что для прогнозирования можно использовать как многослойный перспетрон, так и RNN. Однако, RNN обаладает очень интересной чертой: она обладает, так называемой, памятью, способной <<запоминать>> особенности данных временных рядов. Такой памятью многослойный персептрон не обладает. Поскольку данные имеют в себе отличающиеся друг от дурга, но повторяющиеся в будущем участки, то наличие такой памяти было бы очень кстати. Также, как можно будет узнать дальше, большинство, если не все, RNN имеют чётко определённую структуру, в которую довольно сложно что-то добавить, да и нет в этом необходимости. В случае с многослойными персептронами, их структура не постоянна: необходимо подбирать количество скрытых слоёв. Поэтому в некотором смысле, реализация RNN не только будет выгоднее, но и проще. При этом, если обратиться к Kaspersky MLAD, то можно вспомнить, что для прогнозирования данных телемпетрии используются именно RNN. Учитывая всё вышенаписанное, выбор архитектуры падает на RNN.
+  \par \redline Выходит, что для прогнозирования можно использовать как многослойный персептрон, так и RNN. Однако, RNN обладает очень интересной чертой: она обладает, так называемой, памятью, способной <<запоминать>> особенности данных временных рядов. Такой памятью многослойный персептрон не обладает. Поскольку данные имеют в себе отличающиеся друг от друга, но повторяющиеся в будущем участки, то наличие такой памяти было бы очень кстати. Также, как можно будет узнать дальше, большинство, если не все, RNN имеют чётко определённую структуру, в которую довольно сложно что-то добавить, да и нет в этом необходимости. В случае с многослойными персептронами, их структура не постоянна: необходимо подбирать количество скрытых слоёв. Поэтому в некотором смысле, реализация RNN не только будет выгоднее, но и проще. При этом, если обратиться к Kaspersky MLAD, то можно вспомнить, что для прогнозирования данных телеметрии используются именно RNN. Учитывая всё вышенаписанное, выбор архитектуры падает на RNN.
 
-  \par \redline Теперь необходимо выбрать модель RNN. Существует большое количество различных реккурентных нейронных сетей: SRN Джордана, SRN Элмана, мультиреккурентная нейронная сеть, LSTM, GRU и так далее. Однако, одной из самых распространнённых и эффектовных RNN считают LSTM сеть. Эта сеть встречается куда чаще, чем её модификации, такие как GRU, MGU, LSTM <<с глазками>> и другие. Основной задачей ставилось упрощение сети без вреда её точности, результатом чего появилась ранее упомянутая GRU, точность предсказаний которой не уступает LSTM, но при этом сеть менее грамоздкая. Упростить удалось и GRU, получив тем самым MGU, однако точность этой сети всё также сравнивалась с LSTM. Поэтому для данной работы за основу будет взята классическая LSTM.
+  \par \redline Теперь необходимо выбрать модель RNN. Существует большое количество различных рекуррентных нейронных сетей: SRN Джордана, SRN Элмана, мультирекуррентная нейронная сеть, LSTM, GRU и так далее. Однако, одной из самых распространённых и эффективных RNN считают LSTM сеть. Эта сеть встречается куда чаще, чем её модификации, такие как GRU, MGU, LSTM <<с глазками>> и другие. Основной задачей ставилось упрощение сети без вреда её точности, результатом чего появилась ранее упомянутая GRU, точность предсказаний которой не уступает LSTM, но при этом сеть менее громоздкая. Упростить удалось и GRU, получив тем самым MGU, однако точность этой сети всё также сравнивалась с LSTM. Поэтому для данной работы за основу будет взята классическая LSTM.
 
   \par \redline К слову, LSTM была выбрана и Kaspersky при разработке системы MLAD. Это в очередной раз говорит о популярности и надёжности сети LSTM, что укрепляет уверенность в выборе LSTM сети для данной работы. 
 
@@ -51,7 +51,7 @@
   
 {\gostFont
 
-  \par \redline Сеть LSTM обладает двумя видами памяти, которые способны сохранять различные зависимости в данных. Есть долгосрочная память, которая обозначается как $ C_{t} $, и краткосрочная память, которая обозначается как $ H_{t} $. Как можно догадаться, долгосрочная память сети хранит в себе особенности данных на протяжении всей истории, а краткосрочная память хранит зависимости ближайших промежутков и сильнее влияет на результат прогноза. Зачастую краткосрочную память сети обозначают как её выход. При этом входом сети является некоторый вектор данных, на основании которых будет делаться прогноз. Вектор входных данных будет обозначаться как $ X_{t} $. Как можно заметить, у всех параметров сети присутствует временная компонента t. Это говорит о том, что расчёт прогноза происходит относительно времени. Каждая новая итерация сети происходит с изменением времени. Память сети изменяется на одной из итерации и передаётся на следующую, тем самым сеть и сохраняется особенности данных временного ряда, который был подан на вход сети. Такая передача памяти возможно благодаря, так называемых в нейронных сетя, обратных связях, наличие которые и определяет сеть как реккурентную. Вышеописанное можно увидеть на рисунке \thechaptercntr .\theimagecntr. 
+  \par \redline Сеть LSTM обладает двумя видами памяти, которые способны сохранять различные зависимости в данных. Есть долгосрочная память, которая обозначается как $ C_{t} $, и краткосрочная память, которая обозначается как $ H_{t} $. Как можно догадаться, долгосрочная память сети хранит в себе особенности данных на протяжении всей истории, а краткосрочная память хранит зависимости ближайших промежутков и сильнее влияет на результат прогноза. Зачастую краткосрочную память сети обозначают как её выход. При этом входом сети является некоторый вектор данных, на основании которых будет делаться прогноз. Вектор входных данных будет обозначаться как $ X_{t} $. Как можно заметить, у всех параметров сети присутствует временная компонента t. Это говорит о том, что расчёт прогноза происходит относительно времени. Каждая новая итерация сети происходит с изменением времени. Память сети изменяется на одной из итерации и передаётся на следующую, тем самым сеть и сохраняется особенности данных временного ряда, который был подан на вход сети. Такая передача памяти возможно благодаря, так называемых в нейронных сетях, обратных связях, наличие которые и определяет сеть как рекуррентную. Вышеописанное можно увидеть на рисунке \thechaptercntr .\theimagecntr. 
 
   \begin{figure}[H]
     \centering
@@ -61,7 +61,7 @@
     \label{fig:LSTMBlackBox}
   \end{figure} \addtocounter{imagecntr}{1}
 
-  \par \redline Каждый такой блок сети LSTM, изображённый на рисунке выше, зачастую называют ячейкой LSTM. Свзять этих ячекек между собой можно гораздо лучше увидеть на развёрнутой схеме LSTM, изображённой на рисунке \thechaptercntr .\theimagecntr. 
+  \par \redline Каждый такой блок сети LSTM, изображённый на рисунке выше, зачастую называют ячейкой LSTM. Связь этих ячеек между собой можно гораздо лучше увидеть на развёрнутой схеме LSTM, изображённой на рисунке \thechaptercntr .\theimagecntr. 
 
   \begin{figure}[H]
     \centering
@@ -71,7 +71,7 @@
     \label{fig:LSTMSequence}
   \end{figure} \addtocounter{imagecntr}{1}
 
-  \par \redline Теперь необхомо изучить саму ячейку LSTM. Её строение престалено на рисунку \thechaptercntr .\theimagecntr. Говоря о LSTM, можно встретить специальную лексику, которая относится к описанию этой сети. К специальной лексике относятся такие понятия как: врата забывания ($F_t$), врата входа ($I_t$), врата новой памяти ($G_t$), врата выхода ($O_t$), долгосрочная память ($C_t$) и краткосрочная память ($H_t$). Разберём каждый из них по отдельности.
+  \par \redline Теперь необходимо изучить саму ячейку LSTM. Её структура престалена на рисунку \thechaptercntr .\theimagecntr. Говоря о LSTM, можно встретить специальную лексику, которая относится к описанию этой сети. К специальной лексике относятся такие понятия как: врата забывания ($F_t$), врата входа ($I_t$), врата новой памяти ($G_t$), врата выхода ($O_t$), долгосрочная память сети ($C_t$) и краткосрочная память сети ($H_t$). Разберём каждый из этих понятий по отдельности, параллельно определяя формулы, по которым можно их рассчитать.
 
   \begin{sidewaysfigure}
     \centering
@@ -81,7 +81,7 @@
     \label{fig:LSTM}
   \end{sidewaysfigure} \addtocounter{imagecntr}{1}
 
-  \par \redline Врата забывания ($F_t$) необходимы для исключения некоторый информации из долгосрочной памяти сети ($C_t$) и рассчитываются по формуле (\thechaptercntr .\theformulacntr):
+  \par \redline Врата забывания ($F_t$) необходимы для исключения некоторый информации из долгосрочной памяти сети ($C_t$), которую нужно <<забыть>>, отсюда и название врат, и рассчитываются по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
     $F_t = sigm(W_f \times X_t + U_f \times H_{t-1} + b_f)$
@@ -97,7 +97,7 @@
     & 	   & $U_f$ {--} матрица весов врат забывания для взаимодействия с вектором краткосрочной памяти. \\
   \end{tabular}
 
-  \par \redline Врата новой памяти ($G_t$) отвечают за формирование, так скажем, претендентов на новую долгосрочную память ($C_t$) и рассчитываются по формуле (\thechaptercntr .\theformulacntr):
+  \par \redline Врата новой памяти ($G_t$) отвечают за формирование, так скажем, претендентов, которые должны стать частью новой долгосрочной памятью сети ($C_t$), и рассчитываются по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
     $G_t = tanh(W_g \times X_t + U_g \times H_{t-1} + b_g)$
@@ -125,7 +125,7 @@
     & 	   & $U_i$ {--} матрица весов врат входа для взаимодействия с вектором краткосрочной памяти. \\
   \end{tabular}
 
-  \par \redline Долгосрочная память ($C_t$) хранит в себе особенности и закономерности времного ряда на протяжении всей истории. Наличие такой памяти исключает забывание некоторых особенностей в данных, которые повторяются очень редко или удалены друг от друга на значительном расстонии относительно оси абсцисс. Долгосрочная память рассчитывается по формуле (\thechaptercntr .\theformulacntr):
+  \par \redline Долгосрочная память ($C_t$) хранит в себе особенности и закономерности временого ряда на протяжении всей истории. Наличие такой памяти исключает забывание некоторых особенностей в данных, которые повторяются очень редко или удалены друг от друга на значительном расстоянии относительно оси абсцисс. Долгосрочная память рассчитывается по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
     $C_t = F_t \times C_{t-1} + I_t \times G_t$
@@ -150,14 +150,14 @@
     & 	   & $U_o$ {--} матрица весов врат выхода для взаимодействия с вектором краткосрочной памяти. \\
   \end{tabular}
 
-  \par \redline Краткосрочная память сети хранит в себе закономерности временного ряда в ближайшей его истории. Эта память явяется выходом ячейки LSTM и в дальнейшем непосредственно участвует при составлении прогноза. Новая краткосрочная память сети рассчитывается по формуле: 
+  \par \redline Краткосрочная память сети хранит в себе закономерности временного ряда в ближайшей его истории. Эта память является выходом ячейки LSTM и в дальнейшем непосредственно участвует при составлении прогноза. Новая краткосрочная память сети рассчитывается по формуле (\thechaptercntr .\theformulacntr): 
 
   \formulaspace \par \redline 
     $H_t = O_t \times tanh(C_t)$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
-  \par \redline Теперь необходимо понять, что делать с краткосрочной памятью ячейки LSTM, как с помощью неё получить прогноз? Ответ на этот вопрос весьма прост: для этого можно использовать один обычный нейрон с сигмоидальной функцией активации. Расчёт прогноза производится по формеле (\thechaptercntr .\theformulacntr):
+  \par \redline Теперь необходимо понять, что делать с краткосрочной памятью ячейки LSTM, как с помощью неё получить прогноз? Ответ на этот вопрос весьма прост: для этого можно использовать один обычный нейрон с сигмоидальной функцией активации. Расчёт прогноза производится по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
     $Y_t = sigm(W_y \times H_t + b_y)$
@@ -166,11 +166,11 @@
 
   \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
 		& где  & $Y_t$ {--} вектор прогноза; \\
-		& 	   & $W_y$ {--} матрица весов врат выхода для взаимодействия с входным краткосрочной памяти; \\
-    & 	   & $b_y$ {--} вектор смещения для прогноза.
+		& 	   & $W_y$ {--} матрица весов выходного нейрона; \\
+    & 	   & $b_y$ {--} вектор смещений выходного нейрона.
   \end{tabular}
 
-  \par \redline Таким образом можно получить прогноз, используя сеть LSTM. Теперь, когда точно известно, как можно получить прогноз используя сесть LSTM, приступим к её обучению. 
+  \par \redline Таким образом можно получить прогноз, используя сеть LSTM. Хотя есть варианты, когда долгосрочная память воспринимается как прогноз и сеть обучается в соответствии с этим. Однако выходной нейрон, в который попадает результат ячейки LSTM, повышает точность предсказаний. Теперь, когда точно известно, как можно получить прогноз используя сесть LSTM, приступим к её обучению. 
 
   \par
 }
@@ -188,9 +188,9 @@
   
 {\gostFont
 
-  \par \redline Обучение сети LSTM будет проводиться с помощью метода обратного распространения ошибки во времени. Этот метод позволяет учитывать временные зависимости, благодаря чему можно решить проблему обучения сети с обратными связями. Данный метод предполагает поиск ошибки сети, <<протягиение>> этой ошибки по каждому элементу сети с помощью метода градиентного спуска, после чего обучение весовых коэффицентов. <<Протягивание>> ошибки необходимо, чтобы рассчитать вклад каждого элемента в общую ошибку и изменить величину весового коэффициента в соответствии с ошибкой самого элемента. 
+  \par \redline Обучение сети LSTM будет проводиться с помощью метода обратного распространения ошибки во времени. Этот метод позволяет учитывать временные зависимости, благодаря чему можно решить проблему обучения сети с обратными связями. Данный метод предполагает поиск ошибки сети, <<протягивание>> этой ошибки по каждому элементу сети с помощью метода градиентного спуска, после чего обучение весовых коэффициентов. <<Протягивание>> ошибки необходимо, чтобы рассчитать вклад каждого элемента в общую ошибку и изменить величину весового коэффициента в соответствии с ошибкой самого элемента. 
 
-  \par \redline Для определения ошибки самой сети воспользуемся среднеквадратической ошибкой (MSE), которую можно рассчитать по формуле (\thechaptercntr .\theformulacntr):
+  \par \redline Для определения ошибки самой сети воспользуемся среднеквадратической ошибкой ($MSE$), которую можно рассчитать по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
     $MSE = 0.5 \cdot (E_t - Y_t)^2$
@@ -205,92 +205,123 @@
   \par \redline Определив ошибку сети появляется возможность определить ошибку по выходному нейрону по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
-    $\scaleto{\frac{\delta MSE}{\delta Y_t}}{18pt} = (Y_t - E_t) \times sigm'(Y_t)$
+    $\scaleto{\frac{\delta MSE}{\delta Y_t}}{19pt} = (Y_t - E_t) \times sigm'(Y_t)$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
-		& где  & $\scaleto{\frac{\delta MSE}{\delta Y_t}}{18pt}$ {--} вектор ошибки выходного нейрона. \\
+		& где  & $\scaleto{\frac{\delta MSE}{\delta Y_t}}{18pt}$ {--} ошибка по вектору выходных значений, другими словами, ошибка по выходному нейрону. \\
   \end{tabular}
 
   \par \redline Теперь появилась возможность определить ошибку по весам матрицы $W_y$ по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
-    $\scaleto{\frac{\delta MSE}{\delta W_y}}{18pt} = \scaleto{\frac{\delta MSE}{\delta Y_y} \times \frac{\delta Y_t}{\delta W_y}}{18pt} = \scaleto{\frac{\delta MSE}{\delta Y_t}}{18pt} \times H_t$
+    $\scaleto{\frac{\delta MSE}{\delta W_y} = \frac{\delta MSE}{\delta Y_y} \times \frac{\delta Y_t}{\delta W_y} = \frac{\delta MSE}{\delta Y_t} \times }{21pt} H_t$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
-		& где  & $\scaleto{\frac{\delta MSE}{\delta W_y}}{18pt}$ {--} матрица ошибок весовых коэффициентов выходного нейрона. \\
+		& где  & $\scaleto{\frac{\delta MSE}{\delta W_y}}{20pt}$ {--} ошибка по матрице весовых коэффициентов выходного нейрона. \\
   \end{tabular}
 
   \par \redline Схожим образом находим ошибку по смещениям выходного нейрона с помощью формулы (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
-    $\scaleto{\frac{\delta MSE}{\delta b_y}}{20pt} = \scaleto{\frac{\delta MSE}{\delta Y_y} \times \frac{\delta Y_t}{\delta b_y}}{18pt} = \scaleto{\frac{\delta MSE}{\delta Y_t}}{18pt}$
+    $\scaleto{\frac{\delta MSE}{\delta b_y} = \frac{\delta MSE}{\delta Y_t} \times \frac{\delta Y_t}{\delta b_y} = \frac{\delta MSE}{\delta Y_t}}{21pt}$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
-		& где  & $\scaleto{\frac{\delta MSE}{\delta b_y}}{20pt}$ {--} вектор ошибок коэффициентов смещений выходного нейрона. \\
+		& где  & $\scaleto{\frac{\delta MSE}{\delta b_y}}{21pt}$ {--} ошибка по вектору смещений выходного нейрона. \\
   \end{tabular}
 
   \par \redline Для обучения весовых коэффициентов выходного нейрона воспользуемся общей для обучения любых весовых коэффициентов формулой (\thechaptercntr .\theformulacntr), подставив туда необходимые значения:
 
   \formulaspace \par \redline 
-    $W = W - \alpha \cdot \scaleto{\frac{\delta MSE}{\delta W}}{18pt}$
+    $W = W - \alpha \cdot \scaleto{\frac{\delta MSE}{\delta W}}{19pt}$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
 		& где  & $W$ {--} матрица весовых коэффициентов; \\
-    & где  & $\scaleto{\frac{\delta MSE}{\delta W}}{20pt}$ {--} матрица ошибок весовых коэффициентов. \\
+    & где  & $\scaleto{\frac{\delta MSE}{\delta W}}{19pt}$ {--} ошибка по матрице весовых коэффициентов. \\
   \end{tabular}
 
   \par \redline Для обучения коэффициентов смещения выходного нейрона воспользуемся общей для обучения любых коэффициентов смещений формулой (\thechaptercntr .\theformulacntr), подставив туда необходимые значения:
 
   \formulaspace \par \redline 
-    $b = b + \alpha \cdot \scaleto{\frac{\delta MSE}{\delta b}}{18pt}$
+    $b = b + \alpha \cdot \scaleto{\frac{\delta MSE}{\delta b}}{19pt}$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \par \redline Далее переходим к обучения самой сети. Для этого в первую очередь необходимо определить ошибку краткосрочной памяти. Это можно сделать по формуле (\thechaptercntr .\theformulacntr):
 
+  \formulaspace 
+    \par \redline 
+    $\scaleto{\frac{\delta MSE}{\delta H_t} = \frac{\delta MSE}{\delta Y_t} \times \frac{\delta Y_t}{\delta H_t} + \frac{\delta MSE}{\delta F_{t+1}} \times \frac{\delta F_{t+1}}{\delta H_t} + \frac{\delta MSE}{\delta I_{t+1}} \times \frac{\delta I_{t+1}}{\delta H_t} + }{20pt}$
+    \par \redline 
+    $\scaleto{+ \frac{\delta MSE}{\delta G_{t+1}} \times \frac{\delta G_{t+1}}{\delta H_t} + \frac{\delta MSE}{\delta O_{t+1}} \times \frac{\delta O_{t+1}}{\delta H_t} = \frac{\delta MSE}{\delta Y_t} \times }{20pt} W_y +  \scaleto{\frac{\delta MSE}{\delta F_{t+1}}}{21pt} \times U_f + $
+    \hspace{0.475cm} (\thechaptercntr .\theformulacntr) 
+    \par \redline 
+    $+ \scaleto{\frac{\delta MSE}{\delta I_{t+1}} \times}{20pt} U_i \scaleto{+ \frac{\delta MSE}{\delta G_{t+1}} \times}{20pt} U_g \scaleto{+ \frac{\delta MSE}{\delta O_{t+1}} \times}{20pt} U_o$
+    \par
+  \formulaspace \addtocounter{formulacntr}{1}
+
+  \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
+		& где  & $\scaleto{\frac{\delta MSE}{\delta H_t}}{19pt}$ {--} ошибка по вектору краткосрочной памяти на текущей итерации; \\
+    &      & $\scaleto{\frac{\delta MSE}{\delta F_{t+1}}}{19pt}$ {--} ошибка из будущего по вектору врат забывания; \\
+    &      & $\scaleto{\frac{\delta MSE}{\delta I_{t+1}}}{19pt}$ {--} ошибка из будущего по вектору врат входа; \\
+    &      & $\scaleto{\frac{\delta MSE}{\delta G_{t+1}}}{19pt}$ {--} ошибка из будущего по вектору врат новой памяти; \\
+    &      & $\scaleto{\frac{\delta MSE}{\delta O_{t+1}}}{19pt}$ {--} ошибка из будущего по вектору врат выхода. \\
+  \end{tabular}
+
+  \par \redline Определив ошибку по краткосрочной памяти можно определить ошибку по долгосрочной памяти, воспользовавшись формулой (\thechaptercntr .\theformulacntr):
+
   \formulaspace \par \redline 
-    $\scaleto{\frac{\delta MSE}{\delta H_t}}{18pt} = \scaleto{\frac{\delta MSE}{\delta Y_y} \times \frac{\delta Y_t}{\delta H_y}}{18pt} + \scaleto{\frac{\delta MSE}{\delta F_{t+1}} \times \frac{\delta F_{t+1}}{\delta H_y}}{18pt} + \scaleto{\frac{\delta MSE}{\delta I_{t+1}} \times \frac{\delta I_{t+1}}{\delta H_y}}{18pt} + \scaleto{\frac{\delta MSE}{\delta G_{t+1}} \times \frac{\delta G_{t+1}}{\delta H_y}}{18pt} + \scaleto{\frac{\delta MSE}{\delta O_{t+1}} \times \frac{\delta O_{t+1}}{\delta H_y}}{18pt} = \scaleto{\frac{\delta MSE}{\delta Y_t}}{18pt}$
+    $\scaleto{\frac{\delta MSE}{\delta C_t} = \frac{\delta MSE}{\delta H_t} \times \frac{\delta H_t}{\delta C_t} + \frac{\delta MSE}{\delta C_{t+1}} \times \frac{\delta C_{t+1}}{\delta C_t} = \frac{\delta MSE}{\delta H_t} \times }{21pt}$
+    \hspace{2.6cm} (\thechaptercntr .\theformulacntr) 
+    \par \redline $\scaleto{\times}{10pt} O_t \scaleto{\times}{10pt} tanh'(C_t) \scaleto{+ \frac{\delta MSE}{\delta C_{t+1}} \times}{21pt} F_{t+1}$
+  \formulaspace \addtocounter{formulacntr}{1}
+
+  \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
+		& где  & $\scaleto{\frac{\delta MSE}{\delta C_t}}{19pt}$ {--} ошибка по вектору долгосрочной памяти на текущей итерации; \\
+    &      & $\scaleto{\frac{\delta MSE}{\delta C_{t+1}}}{19pt}$ {--} ошибка по вектору из будущего по вектору долгосрочной памяти; \\
+    &      & $F_{t+1}$ {--} вектор врат забывания из будущего. \\
+  \end{tabular}
+
+  \par \redline Теперь, когда найдена ошибка по долгосрочной памяти, можно приступать к расчёту ошибок врат сети LSTM, а в последующем к обучению весовых коэффициентов и коэффициентов каждых врат.
+
+  \par \redline Начнём с ошибки по вратам забывания, которую можно рассчитать по формуле (\thechaptercntr .\theformulacntr):
+
+  \formulaspace \par \redline 
+    $\scaleto{\frac{\delta MSE}{\delta F_t} = \frac{\delta MSE}{\delta C_t} \times \frac{\delta C_t}{\delta F_t} = \frac{\delta MSE}{\delta C_t} \times }{21pt} C_{t-1} \scaleto{\times}{10pt} sigm'(F_t)$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
-		& где  & $\alpha$ {--} скорость обучения. \\
+		& где  & $\scaleto{\frac{\delta MSE}{\delta F_t}}{21pt}$ {--} ошибка по вектору врат забывания. \\
   \end{tabular}
-
-  \par \redline 
-
-  \par \redline 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
   \par \redline Ошибку по матрице весовых коэффициентов врат забывания для взаимодействия с входным вектором можно рассчитать по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
-    $\scaleto{\frac{\delta MSE}{\delta W_f}}{18pt} = \scaleto{\frac{\delta MSE}{\delta F_t} \times \frac{\delta F_t}{\delta W_f}}{18pt} = \scaleto{\frac{\delta MSE}{\delta F_t}}{18pt} \times X_t$
+    $\scaleto{\frac{\delta MSE}{\delta W_f} = \frac{\delta MSE}{\delta F_t} \times \frac{\delta F_t}{\delta W_f} = \frac{\delta MSE}{\delta F_t} \times }{22pt} X_t$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
-		& где  & $\scaleto{\frac{\delta MSE}{\delta W_f}}{18pt}$ {--} ошибка по матрице весовых коэффициентов врат забывания для взаимодействия с входным вектором. \\
+		& где  & $\scaleto{\frac{\delta MSE}{\delta W_f}}{21pt}$ {--} ошибка по матрице весовых коэффициентов врат забывания для взаимодействия с входным вектором. \\
   \end{tabular}
 
   \par \redline Ошибку по матрице весовых коэффициентов врат забывания для взаимодействия с вектором краткосрочной памяти можно рассчитать по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
-    $\scaleto{\frac{\delta MSE}{\delta U_f}}{18pt} = \scaleto{\frac{\delta MSE}{\delta F_t} \times \frac{\delta F_t}{\delta U_f}}{18pt} = \scaleto{\frac{\delta MSE}{\delta F_t}}{18pt} \times H_{t-1}$
+    $\scaleto{\frac{\delta MSE}{\delta U_f} = \frac{\delta MSE}{\delta F_t} \times \frac{\delta F_t}{\delta U_f} = \frac{\delta MSE}{\delta F_t} \times }{22pt} H_{t-1}$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
-		& где  & $\scaleto{\frac{\delta MSE}{\delta U_f}}{18pt}$ {--} ошибка по матрице весовых коэффициентов врат забывания для взаимодействия с вектором краткосрочной памяти. \\
+		& где  & $\scaleto{\frac{\delta MSE}{\delta U_f}}{21pt}$ {--} ошибка по матрице весовых коэффициентов врат забывания для взаимодействия с вектором краткосрочной памяти. \\
   \end{tabular}
 
   \par \redline Обучить весовые коэффициенты матриц врат забывания можно, подставив соответствующие значения в формулу (\thechaptercntr .12).
@@ -298,34 +329,43 @@
   \par \redline Ошибка по вектору смещений врат забывания определяется по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
-    $\scaleto{\frac{\delta MSE}{\delta b_f}}{20pt} = \scaleto{\frac{\delta MSE}{\delta F_t} \times \frac{\delta F_t}{\delta b_f}}{18pt} = \scaleto{\frac{\delta MSE}{\delta F_t}}{18pt}$
+    $\scaleto{\frac{\delta MSE}{\delta b_f} = \frac{\delta MSE}{\delta F_t} \times \frac{\delta F_t}{\delta b_f} = \frac{\delta MSE}{\delta F_t}}{22pt}$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \par \redline Обучить коэффициенты смещения врат забывания можно, подставив соответствующие значения в формулу (\thechaptercntr .13).
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-  \par \redline Ошибку по матрице весовых коэффициентов врат входа для взаимодействия с входным вектором можно рассчитать по формуле (\thechaptercntr .\theformulacntr):
+  \par \redline Ошибку по вратам входа можно рассчитать по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
-    $\scaleto{\frac{\delta MSE}{\delta W_i}}{18pt} = \scaleto{\frac{\delta MSE}{\delta I_t} \times \frac{\delta I_t}{\delta W_i}}{18pt} = \scaleto{\frac{\delta MSE}{\delta I_t}}{18pt} \times X_t$
+    $\scaleto{\frac{\delta MSE}{\delta I_t} = \frac{\delta MSE}{\delta C_t} \times \frac{\delta C_t}{\delta I_t} = \frac{\delta MSE}{\delta C_t} \times }{21pt} G_t \scaleto{\times}{10pt} sigm'(I_t)$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
-		& где  & $\scaleto{\frac{\delta MSE}{\delta W_i}}{18pt}$ {--} ошибка по матрице весовых коэффициентов врат входа для взаимодействия с входным вектором. \\
+		& где  & $\scaleto{\frac{\delta MSE}{\delta I_t}}{21pt}$ {--} ошибка по вектору врат входа. \\
+  \end{tabular}
+
+  \par \redline Ошибку по матрице весовых коэффициентов врат входа для взаимодействия с входным вектором можно рассчитать по формуле (\thechaptercntr .\theformulacntr):
+
+  \formulaspace \par \redline 
+    $\scaleto{\frac{\delta MSE}{\delta W_i} = \frac{\delta MSE}{\delta I_t} \times \frac{\delta I_t}{\delta W_i} = \frac{\delta MSE}{\delta I_t} \times }{22pt} X_t$
+    \hfill (\thechaptercntr .\theformulacntr) \redline
+  \formulaspace \addtocounter{formulacntr}{1}
+
+  \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
+		& где  & $\scaleto{\frac{\delta MSE}{\delta W_i}}{21pt}$ {--} ошибка по матрице весовых коэффициентов врат входа для взаимодействия с входным вектором. \\
   \end{tabular}
 
   \par \redline Ошибку по матрице весовых коэффициентов врат входа для взаимодействия с вектором краткосрочной памяти можно рассчитать по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
-    $\scaleto{\frac{\delta MSE}{\delta U_i}}{18pt} = \scaleto{\frac{\delta MSE}{\delta I_t} \times \frac{\delta I_t}{\delta U_i}}{18pt} = \scaleto{\frac{\delta MSE}{\delta I_t}}{18pt} \times H_{t-1}$
+    $\scaleto{\frac{\delta MSE}{\delta U_i} = \frac{\delta MSE}{\delta I_t} \times \frac{\delta I_t}{\delta U_i} = \frac{\delta MSE}{\delta I_t} \times }{22pt} H_{t-1}$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
-		& где  & $\scaleto{\frac{\delta MSE}{\delta U_i}}{18pt}$ {--} ошибка по матрице весовых коэффициентов врат входа для взаимодействия с вектором краткосрочной памяти. \\
+		& где  & $\scaleto{\frac{\delta MSE}{\delta U_i}}{21pt}$ {--} ошибка по матрице весовых коэффициентов врат входа для взаимодействия с вектором краткосрочной памяти. \\
   \end{tabular}
 
   \par \redline Обучить весовые коэффициенты матриц врат входа можно, подставив соответствующие значения в формулу (\thechaptercntr .12).
@@ -333,34 +373,43 @@
   \par \redline Ошибка по вектору смещений врат входа определяется по формуле (\thechaptercntr .\theformulacntr): 
 
   \formulaspace \par \redline 
-    $\scaleto{\frac{\delta MSE}{\delta b_i}}{20pt} = \scaleto{\frac{\delta MSE}{\delta I_t} \times \frac{\delta I_t}{\delta b_i}}{18pt} = \scaleto{\frac{\delta MSE}{\delta I_t}}{18pt}$
+    $\scaleto{\frac{\delta MSE}{\delta b_i} = \frac{\delta MSE}{\delta I_t} \times \frac{\delta I_t}{\delta b_i} = \frac{\delta MSE}{\delta I_t}}{22pt}$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \par \redline Обучить коэффициенты смещения врат входа можно, подставив соответствующие значения в формулу (\thechaptercntr .13).
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-  \par \redline Ошибку по матрице весовых коэффициентов врат новой памяти для взаимодействия с входным вектором можно рассчитать по формуле (\thechaptercntr .\theformulacntr):
+  \par \redline Ошибку по вратам входа можно рассчитать по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
-    $\scaleto{\frac{\delta MSE}{\delta W_g}}{18pt} = \scaleto{\frac{\delta MSE}{\delta G_t} \times \frac{\delta G_t}{\delta W_g}}{18pt} = \scaleto{\frac{\delta MSE}{\delta G_t}}{18pt} \times X_t$
+    $\scaleto{\frac{\delta MSE}{\delta G_t} = \frac{\delta MSE}{\delta C_t} \times \frac{\delta C_t}{\delta G_t} = \frac{\delta MSE}{\delta C_t} \times }{21pt} I_t \scaleto{\times}{10pt} tanh'(G_t)$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
-		& где  & $\scaleto{\frac{\delta MSE}{\delta W_g}}{18pt}$ {--} ошибка по матрице весовых коэффициентов врат новой памяти для взаимодействия с входным вектором. \\
+    & где  & $\scaleto{\frac{\delta MSE}{\delta G_t}}{21pt}$ {--} ошибка по вектору врат новой памяти. \\
+  \end{tabular}
+
+  \par \redline Ошибку по матрице весовых коэффициентов врат новой памяти для взаимодействия с входным вектором можно рассчитать по формуле (\thechaptercntr .\theformulacntr):
+
+  \formulaspace \par \redline 
+    $\scaleto{\frac{\delta MSE}{\delta W_g} = \frac{\delta MSE}{\delta G_t} \times \frac{\delta G_t}{\delta W_g} = \frac{\delta MSE}{\delta G_t} \times }{22pt} X_t$
+    \hfill (\thechaptercntr .\theformulacntr) \redline
+  \formulaspace \addtocounter{formulacntr}{1}
+
+  \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
+		& где  & $\scaleto{\frac{\delta MSE}{\delta W_g}}{21pt}$ {--} ошибка по матрице весовых коэффициентов врат новой памяти для взаимодействия с входным вектором. \\
   \end{tabular}
 
   \par \redline Ошибку по матрице весовых коэффициентов врат новой памяти для взаимодействия с вектором краткосрочной памяти можно рассчитать по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
-    $\scaleto{\frac{\delta MSE}{\delta U_g}}{18pt} = \scaleto{\frac{\delta MSE}{\delta G_t} \times \frac{\delta G_t}{\delta U_g}}{18pt} = \scaleto{\frac{\delta MSE}{\delta G_t}}{18pt} \times H_{t-1}$
+    $\scaleto{\frac{\delta MSE}{\delta U_g} = \frac{\delta MSE}{\delta G_t} \times \frac{\delta G_t}{\delta U_g} = \frac{\delta MSE}{\delta G_t} \times }{22pt}H_{t-1}$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
-		& где  & $\scaleto{\frac{\delta MSE}{\delta U_g}}{18pt}$ {--} ошибка по матрице весовых коэффициентов врат новой памяти для взаимодействия с вектором краткосрочной памяти. \\
+		& где  & $\scaleto{\frac{\delta MSE}{\delta U_g}}{21pt}$ {--} ошибка по матрице весовых коэффициентов врат новой памяти для взаимодействия с вектором краткосрочной памяти. \\
   \end{tabular}
 
   \par \redline Обучить весовые коэффициенты матриц врат новой памяти можно, подставив соответствующие значения в формулу (\thechaptercntr .12).
@@ -368,34 +417,43 @@
   \par \redline Ошибка по вектору смещений врат новой памяти определяется по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
-    $\scaleto{\frac{\delta MSE}{\delta b_g}}{20pt} = \scaleto{\frac{\delta MSE}{\delta G_t} \times \frac{\delta G_t}{\delta b_g}}{18pt} = \scaleto{\frac{\delta MSE}{\delta G_t}}{18pt}$
+    $\scaleto{\frac{\delta MSE}{\delta b_g} = \frac{\delta MSE}{\delta G_t} \times \frac{\delta G_t}{\delta b_g} = \frac{\delta MSE}{\delta G_t}}{22pt}$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \par \redline Обучить коэффициенты смещения врат новой памяти можно, подставив соответствующие значения в формулу (\thechaptercntr .13).
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-  \par \redline Ошибку по матрице весовых коэффициентов врат выхода для взаимодействия с входным вектором можно рассчитать по формуле (\thechaptercntr .\theformulacntr):
+  \par \redline Ошибку по вратам выхода можно рассчитать по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
-    $\scaleto{\frac{\delta MSE}{\delta W_o}}{18pt} = \scaleto{\frac{\delta MSE}{\delta O_t} \times \frac{\delta O_t}{\delta W_o}}{18pt} = \scaleto{\frac{\delta MSE}{\delta O_t}}{18pt} \times X_t$
+    $\scaleto{\frac{\delta MSE}{\delta O_t} = \frac{\delta MSE}{\delta H_t} \times \frac{\delta H_t}{\delta O_t} = \frac{\delta MSE}{\delta H_t} \times }{21pt} tanh(C_{t-1}) \scaleto{\times}{10pt} sigm'(O_t)$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
-		& где  & $\scaleto{\frac{\delta MSE}{\delta W_g}}{18pt}$ {--} ошибка по матрице весовых коэффициентов врат новой памяти для взаимодействия с входным вектором. \\
+    & где  & $\scaleto{\frac{\delta MSE}{\delta O_t}}{21pt}$ {--} ошибка по вектору врат выхода. \\
+  \end{tabular}
+
+  \par \redline Ошибку по матрице весовых коэффициентов врат выхода для взаимодействия с входным вектором можно рассчитать по формуле (\thechaptercntr .\theformulacntr):
+
+  \formulaspace \par \redline 
+    $\scaleto{\frac{\delta MSE}{\delta W_o} = \frac{\delta MSE}{\delta O_t} \times \frac{\delta O_t}{\delta W_o} = \frac{\delta MSE}{\delta O_t} \times }{22pt} X_t$
+    \hfill (\thechaptercntr .\theformulacntr) \redline
+  \formulaspace \addtocounter{formulacntr}{1}
+
+  \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
+		& где  & $\scaleto{\frac{\delta MSE}{\delta W_g}}{21pt}$ {--} ошибка по матрице весовых коэффициентов врат новой памяти для взаимодействия с входным вектором. \\
   \end{tabular}
 
   \par \redline Ошибку по матрице весовых коэффициентов врат выхода для взаимодействия с вектором краткосрочной памяти можно рассчитать по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
-    $\scaleto{\frac{\delta MSE}{\delta U_o}}{18pt} = \scaleto{\frac{\delta MSE}{\delta O_t} \times \frac{\delta O_t}{\delta U_o}}{18pt} = \scaleto{\frac{\delta MSE}{\delta G_t}}{18pt} \times H_{t-1}$
+    $\scaleto{\frac{\delta MSE}{\delta U_o} = \frac{\delta MSE}{\delta O_t} \times \frac{\delta O_t}{\delta U_o} = \frac{\delta MSE}{\delta O_t} \times }{22pt} H_{t-1}$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \begin{tabular}{p{0,875cm}p{0,3cm}p{15,175cm}}
-		& где  & $\scaleto{\frac{\delta MSE}{\delta U_o}}{18pt}$ {--} ошибка по матрице весовых коэффициентов врат выхода для взаимодействия с вектором краткосрочной памяти. \\
+		& где  & $\scaleto{\frac{\delta MSE}{\delta U_o}}{21pt}$ {--} ошибка по матрице весовых коэффициентов врат выхода для взаимодействия с вектором краткосрочной памяти. \\
   \end{tabular}
 
   \par \redline Обучить весовые коэффициенты матриц врат выхода можно, подставив соответствующие значения в формулу (\thechaptercntr .12).
@@ -403,17 +461,55 @@
   \par \redline Ошибка по вектору смещений врат выхода определяется по формуле (\thechaptercntr .\theformulacntr):
 
   \formulaspace \par \redline 
-    $\scaleto{\frac{\delta MSE}{\delta b_o}}{20pt} = \scaleto{\frac{\delta MSE}{\delta O_t} \times \frac{\delta O_t}{\delta b_o}}{18pt} = \scaleto{\frac{\delta MSE}{\delta O_t}}{18pt}$
+    $\scaleto{\frac{\delta MSE}{\delta b_o} = \frac{\delta MSE}{\delta O_t} \times \frac{\delta O_t}{\delta b_o} = \frac{\delta MSE}{\delta O_t}}{22pt}$
     \hfill (\thechaptercntr .\theformulacntr) \redline
   \formulaspace \addtocounter{formulacntr}{1}
 
   \par \redline Обучить коэффициенты смещения врат выхода можно, подставив соответствующие значения в формулу (\thechaptercntr .13).
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-  \par \redline 
-
   \par
+}
+
+\subtitlespace
+
+\subsection*{ 
+  \gostTitleFont
+  \redline
+  \thechaptercntr .\thesubchaptercntr \spc 
+  Разработка модуля прогнозирования
+} \addtocounter{subchaptercntr}{1} 
+  
+\subtitlespace
+  
+{\gostFont
+
+  \par \redline Когда известно, как получить прогноз от сети LSTM, а также как её обучать, можно переходить к разработке модуля прогнозирования. Однако единый модуль прогнозирования, содержащий весь функционал по обработке данных и работе с моделью нейронной сети, было решено не делать. Вместо этого модуль прогнозирования был разделён на три модуля: модуль обработки и анализа данных DataManipulator, модуль для создания, редактирования, обучения и тестирования модели нейронной сети NNTrainer, а также модуль непосредственного прогнозирования ForecasterTS, который в последствии должен быть развернуть на программируемом контроллере. Пройдёмся по каждому модулю в отдельности. 
+
+  \par \redline Модуль DataManipulator необходим для обработки, аппроксимации и анализа данных, а также для формирования данных для обучения. В его функции входит: обрезка данных, визуализация данных, сборка табличного формата данных из файлов строчного формата, парсинг данных, преобразование данных в равноинтервальные временные ряды и сохранение данных как в текстовый, так и в бинарный файл. Данный модуль может быть развёрнут на любом устройстве. DataManipulator не является целевым модулем, а разработан с целью повышения удобства работы с данными и благоприятного продвижения по этапам инженерии машинного обучения. DataManipulator помогает пройти этап сбора и подготовки данных и этап конструирования признаков. 
+
+  \par \redline Модуль NNTrainer необходим для создания, редактирования, обучения и тестирования модели нейронной сети. В его функции входит как создание новой модели, так и возможность загрузить уже готовую модель нейронной сети для редактирования или дообучения. Данный модуль может быть развёрнут на любом устройстве. NNTrainer не является целевым модулем, а разработан с целью повышения удобства работы с моделями нейронных сетей и благоприятного продвижения по этапам инженерии машинного обучения. NNTrainer помогает пройти этап обучения модели и этап тестирования модели.
+  
+  \par \redline Прежде чем перейти к основному модулю, необходимо упомянуть визуализацию данных. Построение графиков данных временных рядов технологического процесса пастеризационной установки выполняется средствами Python. Для визуализации требуются также библиотеке matplotlib и keyboard. Библиотека keyboard необходима для считывания нажатых клавиш и используется при масштабировании графиков, которые строятся благодаря библиотеки matplotlib. Вообще matplotlib это можный инструмент для визуализации данных хоть в плоскости, хоть в пространстве. Также библиотека matplotlib подгодит для создания диаграмм различных форм, графиков и схем. Средства визуализации на Python используют только модули DataManipulator и NNTrainer. За счёт того, что данные модули являются дполнительными, то для упрощения визуализации данных был выбран именно Python, прогрмма по визуализации которой вызывается из модулей DataManipulator и NNTrainer, написанные на языке программирования C++.
+
+  \par \redline Теперь о ForecasterTS. Учитывая требования к модулю прогнозирования, основная программа написана на языке программирования C++. Также учитывая, что программа должна быть в будущем развёрнута на программируемом микроконтроллере, то программа использует утилиту CMake для того, чтобы обеспечить кроссплатформенность проекту. Программа написана с помощью IDE Microsoft Visual Studio Community 2022, где есть возможность создавать и разрабатывать проекты с использованием утилиты CMake. Её функционал сводится к простому алгоритму: получение данных, загрузка модели нейронной сети, формирование прогноза но основе входных данных, сохранение модели нейронной сети и вывод прогноза. 
+
+}
+
+\subtitlespace
+
+\subsection*{ 
+  \gostTitleFont
+  \redline
+  \thechaptercntr .\thesubchaptercntr \spc 
+  Тестирование модели нейронной сети
+} \addtocounter{subchaptercntr}{1} 
+  
+\subtitlespace
+  
+{\gostFont
+
+  \par \redline Результаты рабоыт обученной модели нейронной сети для всех прогнозируемых параметров можно увидеть на рисунках 4.4, 4.5, 4.6. 
+
 }
 
 \setcounter{subchaptercntr}{1}
