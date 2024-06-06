@@ -15,7 +15,7 @@
 				"-outdir=out",
 				"-interaction=nonstopmode",
 				"-file-line-error",
-				"pl2.tex"
+				"pl3.tex"
 			]
 		}]
 	}
