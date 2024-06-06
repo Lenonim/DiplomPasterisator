@@ -16,7 +16,7 @@
 				"-interaction=nonstopmode",
 				"-file-line-error",
 				"--shell-escape",
-				"pl1.tex"
+				"pl2.tex"
 			]
 		}]
 	}
