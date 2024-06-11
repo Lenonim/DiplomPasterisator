@@ -1,0 +1,127 @@
+\documentclass[a4paper, oneside, openany]{report}
+
+\usepackage{ragged2e} 
+
+\usepackage{geometry}
+\geometry{left=3cm}
+\geometry{right=1.5cm}
+\geometry{top=3.0cm} 
+\geometry{bottom=2.0cm}
+
+\usepackage{titlesec} 
+\newcommand{\sectionbreak}{\clearpage} 
+
+\usepackage{graphicx, epsfig}
+\usepackage[inkscapeformat=png]{svg} 
+
+\usepackage{parskip} % сам настроит интервалы нужным образом
+
+\setcounter{page}{5} % устанавливаем начальную страницу
+
+\usepackage{caption} % для того, чтобы редактировать подписи к картинкам
+
+\usepackage{rotating} % для вращения картинок
+
+\usepackage{float} % чтобы нормально располагались картинки
+
+\usepackage{amsmath} % для нормальной работы с формулами
+
+\usepackage{amsfonts} % для оборажения русских символов в формулах
+
+\usepackage{scalerel} % для изменения размера шрифта в формулах
+
+\usepackage{enumerate, enumitem} % 
+\setlist[itemize]{align=left} % выравнивание по левому краю в лейблах списков
+
+\usepackage{multirow} % для возможности объединения ячеек
+
+\usepackage{stackengine} 
+
+\usepackage{tabularray}
+
+\usepackage{nicematrix}
+
+\usepackage{siunitx}
+
+\setlist[enumerate]{align=left}
+
+% настройка шрифтов и языков
+\usepackage[english, russian]{babel} % для работы с английским и русским языками
+\usepackage[T2A]{fontenc} % для норм паказа символов в pdf
+\usepackage[utf8]{inputenc} % для норм взаимодействия символов для самого tex
+
+\usepackage{fontspec} % для работы со шрифтами 
+\usepackage{polyglossia} % Поддержка многоязычности
+\defaultfontfeatures{Ligatures=TeX,Mapping=tex-text}
+
+\setmainlanguage[babelshorthands = true]{russian} % устанавливаемя русский как основной язык
+\setotherlanguage{english} % устанавливаем английский как дополнительный язык
+
+\setmainfont{Times New Roman} % устанавливаем главный шрифт 
+\setsansfont[Ligatures=TeX]{Arial} % устонавливаем дополнительный шрмфт 
+
+\newfontfamily\cyrillicfont[Script=Cyrillic]{Times New Roman} % делаем так, чтобы русский язык мог отображаться главным шрифтом 
+\newfontfamily\cyrillicfontsf[Script=Cyrillic]{Arial} % делаем так, чтобы русский язык мог отображаться дополнительным шрифтом 
+
+\newfontfamily\englishfont{Times New Roman} % делаем так, чтобы английский язык мог отображаться главным шрифтом 
+\newfontfamily\englishfontsf{Arial} % делаем так, чтобы английский язык мог отображаться дополнительным шрифтом 
+
+% Определяем переменные
+\newcommand\spc{\hspace{0.08cm}} % отступ от каунтера
+\newcommand\redline{\hspace{1.5cm}} % красная строка
+\newcommand\formulaspace{\vspace{0.4cm}} % красная строка
+\newcommand\topTablespace{\vspace{15.6pt}} % отступ до начала таблиц
+\newcommand\botTablespace{\vspace{18.2pt}} % отступ от конца таблиц
+\newcommand\wherespace{\hspace{0.7cm}} % отступ для пояслений к формулам
+\newcommand\titlespace{\vspace{26pt}} % промежуток между заголовками 
+\newcommand\subtitlespace{\vspace{39pt}} % промежуток между заголовком и текстом 
+\newcommand\gostFont{\cyrillicfont \englishfont \fontsize{13pt}{15.6pt}\selectfont} % набор необходимых параметров для обычного текста
+\newcommand\gostTitleFont{\cyrillicfont \englishfont \fontsize{13pt}{0pt}\selectfont \bfseries} % набор необходимых параметров для текста заголовков
+\newcommand\gostRamkaFont{\itshape \cyrillicfontsf \fontsize{8pt}{0pt}\selectfont}
+\parskip=0pt % чтобы между абзацами было расстояние равное межстрочному интервалу
+
+\newcommand\FNine{\fontsize{9pt}{10.8pt}\selectfont} 
+\newcommand\FTwelwe{\fontsize{12pt}{14.4pt}\selectfont}
+
+% Рисует рамку
+\usepackage{xltxtra}
+
+\textheight=260mm
+\textwidth=175mm
+\unitlength=1mm
+
+\oddsidemargin=-0.5mm
+\topmargin=-2.45cm
+
+\makeatletter
+\def\@oddhead{\simpleGrad}
+\def\@oddfoot{}
+\makeatother
+
+\begin{document} 
+
+	\sectionbreak \section*{
+		\gostTitleFont
+		\redline 
+		АННОТАЦИЯ
+	}
+	
+	\subtitlespace
+	
+	{\gostFont
+	
+	\par \redline 66 с./ 80 с.,  22 рис.,  4 табл., 14 исп. ист., 1 прил., 5 граф. матер.
+	
+	\par \redline Целью данного дипломного проекта является создание программного обеспечения для прогнозирования данных временных рядов технологического процесса пастеризационной установки. 
+	
+	\par \redline Приложение разработано с использованием среды разработки Visual Studio 2022 и предназначено для работы под управлением контроллера на основе технологии PLCNext Technology. 
+	
+	\par \redline Разработанное приложение обеспечивает возможность создания, сохронения, загрузки моделей нейронной сети, обучения и редактирование модели нейронной сети, прогнозирование данных временных рядов технологического процесса пастеризационной установки.
+	 
+	\par \redline Проект включает в себя следующие разделы: введение; анализ предметной области и постановка задачи; анализ существующих решений; анализ и обработка данных пастеризационной установки; разработка, обучение и оценка модели нейронной сети; развертывание модели нейронной сети; технико-экономическое обоснование; заключение. 
+
+	\par 
+	
+    }
+	
+\end{document}
