@@ -1,4 +1,4 @@
-\documentclass[a4paper, oneside, openany]{report}
+\documentclass[a4paper, oneside]{report}
 
 \usepackage{ragged2e} 
 
@@ -18,32 +18,7 @@
 
 \setcounter{page}{5} % устанавливаем начальную страницу
 
-\usepackage{caption} % для того, чтобы редактировать подписи к картинкам
-
-\usepackage{rotating} % для вращения картинок
-
-\usepackage{float} % чтобы нормально располагались картинки
-
-\usepackage{amsmath} % для нормальной работы с формулами
-
-\usepackage{amsfonts} % для оборажения русских символов в формулах
-
-\usepackage{scalerel} % для изменения размера шрифта в формулах
-
-\usepackage{enumerate, enumitem} % 
-\setlist[itemize]{align=left} % выравнивание по левому краю в лейблах списков
-
-\usepackage{multirow} % для возможности объединения ячеек
-
-\usepackage{stackengine} 
-
-\usepackage{tabularray}
-
-\usepackage{nicematrix}
-
 \usepackage{siunitx}
-
-\setlist[enumerate]{align=left}
 
 % настройка шрифтов и языков
 \usepackage[english, russian]{babel} % для работы с английским и русским языками
@@ -83,8 +58,7 @@
 \newcommand\FNine{\fontsize{9pt}{10.8pt}\selectfont} 
 \newcommand\FTwelwe{\fontsize{12pt}{14.4pt}\selectfont}
 
-% Рисует рамку
-\usepackage{xltxtra}
+\usepackage{fancyhdr}
 
 \textheight=260mm
 \textwidth=175mm
@@ -93,12 +67,16 @@
 \oddsidemargin=-0.5mm
 \topmargin=-2.45cm
 
-\makeatletter
-\def\@oddhead{\simpleGrad}
-\def\@oddfoot{}
-\makeatother
-
 \begin{document} 
+
+	%\pagestyle{fancy}
+
+	%\fancyhf{} % sets both header and footer to nothing
+	%\renewcommand{\headrulewidth}{0pt}
+
+	%\fancyhead[C]{In the centre of the header on all pages: \thepage}
+	%\fancyfoot[RO]{\thepage}
+	
 
 	\sectionbreak \section*{
 		\gostTitleFont
@@ -106,17 +84,19 @@
 		АННОТАЦИЯ
 	}
 	
-	\subtitlespace
+	\titlespace
 	
 	{\gostFont
 	
-	\par \redline 66 с./ 80 с.,  22 рис.,  4 табл., 14 исп. ист., 1 прил., 5 граф. матер.
+	\par \redline 66 с./ 73 с.,  24 рис.,  4 табл., 14 исп. ист., 1 прил., 5 граф. матер.
 	
+	\par \redline 
+
 	\par \redline Целью данного дипломного проекта является создание программного обеспечения для прогнозирования данных временных рядов технологического процесса пастеризационной установки. 
 	
 	\par \redline Приложение разработано с использованием среды разработки Visual Studio 2022 и предназначено для работы под управлением контроллера на основе технологии PLCNext Technology. 
 	
-	\par \redline Разработанное приложение обеспечивает возможность создания, сохронения, загрузки моделей нейронной сети, обучения и редактирование модели нейронной сети, прогнозирование данных временных рядов технологического процесса пастеризационной установки.
+	\par \redline Разработанное приложение обеспечивает возможность создания, сохронения, загрузки моделей нейронной сети, обучения и редактирования модели нейронной сети, непосредственного прогнозирования данных временных рядов технологического процесса пастеризационной установки.
 	 
 	\par \redline Проект включает в себя следующие разделы: введение; анализ предметной области и постановка задачи; анализ существующих решений; анализ и обработка данных пастеризационной установки; разработка, обучение и оценка модели нейронной сети; развертывание модели нейронной сети; технико-экономическое обоснование; заключение. 
 
