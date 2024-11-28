@@ -6,6 +6,9 @@ if exist title\out\ (
 if exist task_form\out\ (
   rmdir /s /q task_form\out
 )
+if exist annotation\out\ (
+  rmdir /s /q annotation\out
+)
 if exist diplom\out\ (
   rmdir /s /q diplom\out
 )
